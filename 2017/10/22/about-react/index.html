@@ -16,9 +16,11 @@
   
   
   
-    <meta name="description" content="Like a bird in the sky">
+    <meta name="description" content="record something happened in react projectabout div editable  使用contentEditable属性让div可编辑时，去掉react警告：
+  “  contentEditable=”true” suppressContentEditableWarning=”true”  “
+input焦点自动定位：autoFocusrefere...">
   
-  <title>About [ 随变 ]</title>
+  <title>about-react [ 随变 ]</title>
   
   
     <link rel="shortcut icon" href="http://wx.qlogo.cn/mmopen/vi_32/OrZ21spry2qMqwRPFtiaDoRcVYXTC1xXOgM37XEcbujZprxuzb40lISJiagg68velGGMA2LeKj06CmJx2yHCIdHg/0">
@@ -37,6 +39,24 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2017/10/22/about-javascript/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        about-javascript
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/10/22/good-code-framents/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        good-code-framents
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -83,7 +103,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/about">About</a>
             
@@ -108,21 +128,43 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
-    
-      <h1 class="">About</h1>
+  <article id="post">
+    <h1>about-react</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-10-22</span>
+      
+        <span id = "post-title-updated">Updated at 2017-10-22</span>
       
       
+      
+    </p>
     
+    <h2 id="record-something-happened-in-react-project"><a href="#record-something-happened-in-react-project" class="headerlink" title="record something happened in react project"></a>record something happened in react project</h2><h4 id="about-div-editable"><a href="#about-div-editable" class="headerlink" title="about div editable"></a>about div editable</h4><p>  使用contentEditable属性让div可编辑时，去掉react警告：</p>
+<p>  “<br>  contentEditable=”true” suppressContentEditableWarning=”true”<br>  “</p>
+<h4 id="input焦点自动定位：autoFocus"><a href="#input焦点自动定位：autoFocus" class="headerlink" title="input焦点自动定位：autoFocus"></a>input焦点自动定位：autoFocus</h4><pre><code>reference: https://github.com/erikras/redux-form/issues/1382
+</code></pre><h4 id="生成二维码插件"><a href="#生成二维码插件" class="headerlink" title="生成二维码插件"></a>生成二维码插件</h4><pre><code>https://github.com/soldair/node-qrcode
+</code></pre><h4 id="care-about"><a href="#care-about" class="headerlink" title="care about"></a>care about</h4><pre><code>元素要有闭合标签，避免提示错误
+</code></pre><h4 id="使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow"><a href="#使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow" class="headerlink" title="使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})"></a>使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})</h4>
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#record-something-happened-in-react-project"><span class="toc-text">record something happened in react project</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#about-div-editable"><span class="toc-text">about div editable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#input焦点自动定位：autoFocus"><span class="toc-text">input焦点自动定位：autoFocus</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成二维码插件"><span class="toc-text">生成二维码插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#care-about"><span class="toc-text">care about</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow"><span class="toc-text">使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
 
   
 <nav id="pagination">
   
+    <a href="/2017/10/22/about-javascript/" class="prev">&larr; Prev post about-javascript</a>
+  
 
   
 
+  
+    <a href="/2017/10/22/good-code-framents/" class="next">Next post good-code-framents &rarr;</a>
   
 </nav>
 
@@ -132,6 +174,8 @@
 
 
       
+      
+      <div id="disqus_thread"></div>
       
     </div>
   </div>
@@ -147,6 +191,29 @@
 </div>
 
 </div>
+
+  <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//summer-4.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 <div id="user-card">
@@ -276,6 +343,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "F5F8FA";

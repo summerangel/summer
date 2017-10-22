@@ -16,9 +16,18 @@
   
   
   
-    <meta name="description" content="Like a bird in the sky">
+    <meta name="description" content="单行显示省略号： overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+多行显示省略号：
+ display: -webkit-box;
+ -webkit-line-clamp: 2; （多少行的时候显示）
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+
+三角箭头...">
   
-  <title>About [ 随变 ]</title>
+  <title>about-css [ 随变 ]</title>
   
   
     <link rel="shortcut icon" href="http://wx.qlogo.cn/mmopen/vi_32/OrZ21spry2qMqwRPFtiaDoRcVYXTC1xXOgM37XEcbujZprxuzb40lISJiagg68velGGMA2LeKj06CmJx2yHCIdHg/0">
@@ -37,6 +46,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2017/10/22/about-javascript/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        about-javascript
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -83,7 +101,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/about">About</a>
             
@@ -108,14 +126,63 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
-    
-      <h1 class="">About</h1>
+  <article id="post">
+    <h1>about-css</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-10-22</span>
+      
+        <span id = "post-title-updated">Updated at 2017-10-22</span>
       
       
+      
+    </p>
     
+    <h4 id="单行显示省略号："><a href="#单行显示省略号：" class="headerlink" title="单行显示省略号："></a>单行显示省略号：</h4><pre><code> overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+多行显示省略号：
+ display: -webkit-box;
+ -webkit-line-clamp: 2; （多少行的时候显示）
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+
+三角箭头：
+.left_arrow {
+      position: relative;
+      .arrow_left {
+        margin: 5px auto;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -11px;
+        top: -7px;
+        .triangle_top {
+          border-left: 12px solid transparent;
+          border-right: 0px solid transparent;
+          border-bottom: 27px solid #FAD961;
+        }
+        .triangle_bottom {
+          border-left: 12px solid transparent;
+          border-right: 0 solid transparent;
+          border-top: 27px solid #FAD961;
+        }
+      }
+      .count_down {
+        padding: 6px 14px 7px 15px;
+        height: 51px;
+        background: linear-gradient(90deg, #FAD961 0%, #FF8E4E 100%);
+      }
+    }
+</code></pre><h4 id="在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><a href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）" class="headerlink" title="在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）"></a>在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</h4>
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#单行显示省略号："><span class="toc-text">单行显示省略号：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><span class="toc-text">在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</span></a></li></ol>
+  </div>
+</div>
 
   
 <nav id="pagination">
@@ -123,6 +190,8 @@
 
   
 
+  
+    <a href="/2017/10/22/about-javascript/" class="next">Next post about-javascript &rarr;</a>
   
 </nav>
 
@@ -132,6 +201,8 @@
 
 
       
+      
+      <div id="disqus_thread"></div>
       
     </div>
   </div>
@@ -147,6 +218,29 @@
 </div>
 
 </div>
+
+  <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//summer-4.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 <div id="user-card">
@@ -276,6 +370,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "F5F8FA";
