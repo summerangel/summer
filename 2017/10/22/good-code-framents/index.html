@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="随变">
 <meta property="og:description" content="1、将一维数组转为二维数组：var arr=[1,2,3,4,5,6,7],ar=[];                while(arr.length)ar.push(arr.splice(0,3)); 2、手机号校验：if ((mobile.length === 0) || !/^0?(13|15|18|14|17)[0-9]{9}$/.test(phone)) {     alert(&amp;a">
 <meta property="og:image" content="https://summerangel.github.io/2017/10/22/good-code-framents/sun.jpg">
-<meta property="og:updated_time" content="2017-10-22T13:41:00.000Z">
+<meta property="og:updated_time" content="2018-04-02T09:24:46.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="good-code-framents">
 <meta name="twitter:description" content="1、将一维数组转为二维数组：var arr=[1,2,3,4,5,6,7],ar=[];                while(arr.length)ar.push(arr.splice(0,3)); 2、手机号校验：if ((mobile.length === 0) || !/^0?(13|15|18|14|17)[0-9]{9}$/.test(phone)) {     alert(&amp;a">
 <meta name="twitter:image" content="https://summerangel.github.io/2017/10/22/good-code-framents/sun.jpg">
   
   
-    <link rel="icon" href="/assets/img/scene.jpeg">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.b682b3.css">
   <style type="text/css">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<!--<a href="/" class="profilepic">-->
-			<!--<img src="/assets/img/scene.jpeg" class="js-avatar">-->
+			<!--<img src="/assets/img/favicon.ico" class="js-avatar">-->
 		<!--</a>-->
 		<hgroup class="text-left">
 		  <h1 class="header-author">
@@ -115,7 +115,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/scene.jpeg" class="js-avatar">
+				<img src="/assets/img/favicon.ico" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">summer</h1>
@@ -196,6 +196,8 @@
     let matches = reg.exec(phone);
     return matches[1] + &apos; &apos; + matches[2] + &apos; &apos; + matches[3];
   }
+</code></pre><h4 id="6、只输入数字带两位小数点"><a href="#6、只输入数字带两位小数点" class="headerlink" title="6、只输入数字带两位小数点"></a>6、只输入数字带两位小数点</h4><pre><code>const numberOnly = /^[1-9]+([.]{1}[0-9]{0,2}){0,1}$/;
+numberOnly.test(value);
 </code></pre><h4 id="6、头像处理"><a href="#6、头像处理" class="headerlink" title="6、头像处理"></a>6、头像处理</h4><pre><code>html:
     &lt;input id=&quot;fileBtn&quot; type=&quot;file&quot; onchange=&quot;upload(&apos;#fileBtn&apos;, &apos;#img&apos;);&quot; accept=&quot;image/*&quot; /&gt;
     # 解析
@@ -270,6 +272,11 @@ reference: http://m.jb51.net/article/98208.htm
                       <span class="reward-type">支付宝</span>
                     </div>
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat_pay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -357,11 +364,11 @@ reference: http://m.jb51.net/article/98208.htm
   
 <nav id="article-nav">
   
-    <a href="/2017/10/22/about-react/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/22/command-magic/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          about-react
+          good-code-framents
         
       </div>
     </a>
@@ -427,7 +434,7 @@ reference: http://m.jb51.net/article/98208.htm
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 summer
+    		&copy; 2018 summer
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/" target="_blank">summer</a> by Summerangel
