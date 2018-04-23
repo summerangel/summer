@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-01-25T09:42:40.830Z</updated>
+  <updated>2018-04-23T10:40:24.604Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>create-project-related-git</title>
+    <link href="https://summerangel.github.io/2018/04/23/create-project-related-git/"/>
+    <id>https://summerangel.github.io/2018/04/23/create-project-related-git/</id>
+    <published>2018-04-23T10:16:13.000Z</published>
+    <updated>2018-04-23T10:40:24.604Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="avoid-forgetting-every-time-forgot-how-to-do"><a href="#avoid-forgetting-every-time-forgot-how-to-do" class="headerlink" title="avoid forgetting(every time forgot how to do)"></a>avoid forgetting(every time forgot how to do)</h4><p>1、 Step One: create a repo on github first, then copy the https’s url;</p><p>2、 Step Two: under your local project folder’s root path execute: git init;</p><p>3、 Step Three: then execute: git add .</p><p>4、 Step Four: then execute: git commit -m “here is some comment about what will be committed”;</p><p>5、 Step Five: then execute: git remote add origin (here is the url copied in step one);</p><p>6、 Step Six: then execute: git pull origin master</p><pre><code>if you confront this problem: fatal: refusing to merge unrelated histories.you can execute this command like this: git pull origin master --allow-unrelated-histories</code></pre><p>7、 Step Seven: then execute: git push -u origin master</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;avoid-forgetting-every-time-forgot-how-to-do&quot;&gt;&lt;a href=&quot;#avoid-forgetting-every-time-forgot-how-to-do&quot; class=&quot;headerlink&quot; title=&quot;avoi
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>about-svn</title>
