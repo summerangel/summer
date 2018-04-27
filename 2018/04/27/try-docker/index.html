@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://summerangel.github.io">
-  <title>Archives: 2018/4 | 随变</title>
+  <title>Try docker in Mac | 随变</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_25790_aaespums8dcuwhfr.css">
-  <meta name="description" content="被吊打的不行">
-<meta property="og:type" content="website">
-<meta property="og:title" content="随变">
-<meta property="og:url" content="https://summerangel.github.io/archives/2018/04/index.html">
+  <meta name="description" content="一、Install docker   Go to docker official website to download the docker app: https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac    We usually choose the stable one to install; 二、T">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Try docker in Mac">
+<meta property="og:url" content="https://summerangel.github.io/2018/04/27/try-docker/index.html">
 <meta property="og:site_name" content="随变">
-<meta property="og:description" content="被吊打的不行">
+<meta property="og:description" content="一、Install docker   Go to docker official website to download the docker app: https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac    We usually choose the stable one to install; 二、T">
+<meta property="og:updated_time" content="2018-04-27T03:22:39.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随变">
-<meta name="twitter:description" content="被吊打的不行">
+<meta name="twitter:title" content="Try docker in Mac">
+<meta name="twitter:description" content="一、Install docker   Go to docker official website to download the docker app: https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac    We usually choose the stable one to install; 二、T">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -147,36 +149,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="[layout]-try-docker" class="article article-type-[layout] " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-[layout]">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/27/try-docker/" class="archive-article-date">
-  	<time datetime="2018-04-27T01:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/27/try-docker/">Try docker in Mac</a>
+    <h1 class="article-title" itemprop="name">
+      Try docker in Mac
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、Install-docker"><a href="#一、Install-docker" class="headerlink" title="一、Install docker"></a>一、Install docker</h4><p>   Go to docker official website to download the docker app: <a href="https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac</a></p>
+<p>   We usually choose the stable one to install;</p>
+<h4 id="二、Test-your-docker"><a href="#二、Test-your-docker" class="headerlink" title="二、Test your docker"></a>二、Test your docker</h4><p>   After you installed your docker, you can test it with the following command:</p>
+<pre><code>docker --version
+docker --info
+docker run hello-world
+</code></pre><h4 id="三、Public-your-git-repo-to-docker"><a href="#三、Public-your-git-repo-to-docker" class="headerlink" title="三、Public your git repo to docker"></a>三、Public your git repo to docker</h4><p>  1、Go to git to copy your git repo link;</p>
+<p>  2、If you want to exclude some files: open your local git repo and create a .dockerignore file in the root directory and put the following info in it;</p>
+<pre><code>.git
+node_modules
+npm-debug.log
+</code></pre><p>  3、Create a Dockerfile file in root directory and also write the following in it:</p>
+<pre><code>FROM node:8.4
+COPY . /app
+WORKDIR /app
+RUN npm install --registry=https://registry.npm.taobao.org
+EXPOSE 3000
+</code></pre><p>  4、After above finished, you can create an image like following command:</p>
+<pre><code>docker image build -t [here is your repo name] .
+
+Or
+
+docker image build -t [repo name]:0.0.1 .
+</code></pre><p>  5、Container Generate:</p>
+<pre><code>docker container run -p 8000:3000 -it [repo name] /bin/bash
+
+Or
+
+docker container run -p 8000:3000 -it [repo name]:0.0.1 /bin/bash
+</code></pre><p>   you can start your project in docker(execute your project start command,eg: node app.js), and then open the link:<a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> in browser,your project is running.</p>
+<p>  6、Ctrl + c: stop node process; Ctrl + d(or input exit): quit the container; also: docker container kill will help;    </p>
+<p>  7、Register a docker Id in <a href="https://hub.docker.com/" target="_blank" rel="external">https://hub.docker.com/</a>;</p>
+<p>  8、After registering open your terminal and execute: docker login (make sure your docker app is open and vpn is closed)</p>
+<p>  9、After login</p>
+<pre><code>docker image tag [imageName] [username]/[repository]:[tag]
+
+#eg: docker image tag summer-album:0.0.1 summaerangel/summer-album:0.0.1
+</code></pre><p>  10、Finally, publish the image</p>
+<pre><code>docker image push [username]/[repository]:[tag]
+</code></pre><p>   then you can see your published image in hub.docker.com</p>
+<h4 id="四、Commands-that-may-used-frequently"><a href="#四、Commands-that-may-used-frequently" class="headerlink" title="四、Commands that may used frequently"></a>四、Commands that may used frequently</h4><pre><code>docker version
+docker info
+docker image ls (list all the image)
+docker image rm [here is your imageName] (delete image file)
+docker image pull [here is imageName] (pull image file from docker)
+
+docker container run [imageName] (run the image in docker)
+docker container kill [containerId] (kill the running image file)
+docker container ls (list the running container)
+docker container ls --all (list all the container, including the killed ones)
+docker container rm [containerId] (delete the container in the docker)
+</code></pre><h4 id="五、More-detail-description"><a href="#五、More-detail-description" class="headerlink" title="五、More detail description"></a>五、More detail description</h4><p>   If this is not understandable, you can step into following links:</p>
+<p>   <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p>
+<p>   And</p>
+<p>   <a href="https://docs.docker.com/docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac</a></p>
+
+      
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Just for fun,do not mind it<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat_pay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/04/27/try-docker/" class="archive-article-date">
+  	<time datetime="2018-04-27T01:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,84 +284,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2018/04/27/try-docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-[layout]">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/25/about-deploy/" class="archive-article-date">
-  	<time datetime="2018-04-25T10:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/25/about-deploy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to deploy a website on Mac</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/25/about-deploy/">How to deploy a website on Mac</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">deploy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-[layout]">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/23/create-project-related-git/" class="archive-article-date">
-  	<time datetime="2018-04-23T10:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/23/create-project-related-git/">create-project-related-git</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
 
 
           </div>
@@ -289,8 +420,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
