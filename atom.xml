@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-05-03T06:30:26.543Z</updated>
+  <updated>2018-05-07T15:28:17.984Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Some simple snippets about mini-programme</title>
+    <link href="https://summerangel.github.io/2018/05/07/mini-programme-snippets/"/>
+    <id>https://summerangel.github.io/2018/05/07/mini-programme-snippets/</id>
+    <published>2018-05-07T14:54:50.000Z</published>
+    <updated>2018-05-07T15:28:17.984Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、Remove-the-scroll-bar-in-scroll-view"><a href="#一、Remove-the-scroll-bar-in-scroll-view" class="headerlink" title="一、Remove the scroll bar in scroll-view"></a>一、Remove the scroll bar in scroll-view</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">::-webkit-scrollbar &#123;</div><div class="line">     width: 0;</div><div class="line">     height: 0;</div><div class="line">     color: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure></code></pre><h4 id="二、Enable-scroll-in-scroll-view"><a href="#二、Enable-scroll-in-scroll-view" class="headerlink" title="二、Enable scroll in scroll-view"></a>二、Enable scroll in scroll-view</h4><p>  the following css are needed to let the scroll-view to scroll:</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">width: 100%;</div><div class="line">white-space: nowrap;</div></pre></td></tr></table></figure><h4 id="三、Change-the-background-color-of-the-whole-page"><a href="#三、Change-the-background-color-of-the-whole-page" class="headerlink" title="三、Change the background-color of the whole page"></a>三、Change the background-color of the whole page</h4><p>   Add following to your css file:</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Page &#123;</div><div class="line">  display: block;</div><div class="line">  min-height: 100%;</div><div class="line">  background-color: (here is the color you want);</div><div class="line">&#125;</div></pre></td></tr></table></figure><h4 id="四、Using-the-unit-of-rpx-to-adjust-different-phone-size"><a href="#四、Using-the-unit-of-rpx-to-adjust-different-phone-size" class="headerlink" title="四、Using the unit of rpx to adjust different phone size"></a>四、Using the unit of rpx to adjust different phone size</h4><p>  The formula of transfer like following, use iphone6 as example:</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1px = 2rpx;</div><div class="line">1rem = 750/20;</div></pre></td></tr></table></figure><p>   if you want to know more about this, you can step into <a href="http://www.cnblogs.com/fayin/p/6346754.html" target="_blank" rel="external">this article</a></p><h4 id="五、May-be-a-bug"><a href="#五、May-be-a-bug" class="headerlink" title="五、May be a bug"></a>五、May be a bug</h4><p>   Don’t add auto-focus to the element input,it will cause the death of your project(the situation I confronted was:<br>   I can’t go back nor scroll the page)</p><h4 id="六、Something-I-always-forget"><a href="#六、Something-I-always-forget" class="headerlink" title="六、Something I always forget"></a>六、Something I always forget</h4><p>   Dynamically give a class to an element:</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class=&quot;shopcart &#123;&#123; cartShow ? &apos;show&apos; : &apos;&apos; &#125;&#125;&quot;</div></pre></td></tr></table></figure><p>   Add key to a recycle:</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wx:key=&quot;unique&quot;</div></pre></td></tr></table></figure><p>   All above are which I met after completing an static mini-project.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;一、Remove-the-scroll-bar-in-scroll-view&quot;&gt;&lt;a href=&quot;#一、Remove-the-scroll-bar-in-scroll-view&quot; class=&quot;headerlink&quot; title=&quot;一、Remove the scr
+      
+    
+    </summary>
+    
+    
+      <category term="mini-programme" scheme="https://summerangel.github.io/tags/mini-programme/"/>
+    
+  </entry>
   
   <entry>
     <title>Share good method to transfer files between Mac and iphone</title>
