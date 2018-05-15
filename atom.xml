@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-05-07T15:28:17.984Z</updated>
+  <updated>2018-05-15T06:53:53.436Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Problems records</title>
+    <link href="https://summerangel.github.io/2018/05/15/problem-records/"/>
+    <id>https://summerangel.github.io/2018/05/15/problem-records/</id>
+    <published>2018-05-15T06:48:43.000Z</published>
+    <updated>2018-05-15T06:53:53.436Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="error-in-console-gyp-Call-to-‘-util-has-lib-sh-freetype’-returned-exit-status-0-while-in-binding-gyp-while-trying-to-load-binding-gyp"><a href="#error-in-console-gyp-Call-to-‘-util-has-lib-sh-freetype’-returned-exit-status-0-while-in-binding-gyp-while-trying-to-load-binding-gyp" class="headerlink" title="error in console: gyp: Call to ‘./util/has_lib.sh freetype’ returned exit status 0 while in binding.gyp. while trying to load binding.gyp"></a>error in console: gyp: Call to ‘./util/has_lib.sh freetype’ returned exit status 0 while in binding.gyp. while trying to load binding.gyp</h4><p>solve method: </p><pre><code>npm install -g node-gypbrew install pkg-config cairo libpng jpeg giflib</code></pre><h4 id="error-in-console-BOZZMOB-M-T0HZ-rest-bozzmob-node-helloz-js"><a href="#error-in-console-BOZZMOB-M-T0HZ-rest-bozzmob-node-helloz-js" class="headerlink" title="error in console: BOZZMOB-M-T0HZ:rest bozzmob$ node helloz.js"></a>error in console: BOZZMOB-M-T0HZ:rest bozzmob$ node helloz.js</h4><p>/Users/bozzmob/Documents/work/nextgennms/rest/helloz.js:1<br>(function (exports, require, module, <strong>filename, </strong>dirname) { (async function testingAsyncAwait() {<br>                                                                     ^^^^^^^^<br>SyntaxError: Unexpected token function<br>    at Object.exports.runInThisContext (vm.js:53:16)<br>    at Module._compile (module.js:513:28)<br>    at Object.Module._extensions..js (module.js:550:10)<br>    at Module.load (module.js:458:32)<br>    at tryModuleLoad (module.js:417:12)<br>    at Function.Module._load (module.js:409:3)<br>    at Function.Module.runMain (module.js:575:10)<br>    at startup (node.js:160:18)<br>    at node.js:456:3</p><p> Solve method:  check your node version   node -v (here used es7’s property async)</p><h4 id="安装redis修改权限："><a href="#安装redis修改权限：" class="headerlink" title="安装redis修改权限："></a>安装redis修改权限：</h4><pre><code>Attempted to create a lock file on a read-only directory: /data/db, terminating</code></pre><p>   sudo chown -R $USER /data/db</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;error-in-console-gyp-Call-to-‘-util-has-lib-sh-freetype’-returned-exit-status-0-while-in-binding-gyp-while-trying-to-load-binding-gy
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Some simple snippets about mini-programme</title>

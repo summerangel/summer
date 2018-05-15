@@ -149,6 +149,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-about-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/22/about-react/">about-react</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="record-something-happened-in-react-project"><a href="#record-something-happened-in-react-project" class="headerlink" title="record something happened in react project"></a>record something happened in react project</h2><h4 id="about-div-editable"><a href="#about-div-editable" class="headerlink" title="about div editable"></a>about div editable</h4><p>  使用contentEditable属性让div可编辑时，去掉react警告：</p>
+<p>  “<br>  contentEditable=”true” suppressContentEditableWarning=”true”<br>  “</p>
+<h4 id="input焦点自动定位：autoFocus"><a href="#input焦点自动定位：autoFocus" class="headerlink" title="input焦点自动定位：autoFocus"></a>input焦点自动定位：autoFocus</h4><pre><code>reference: https://github.com/erikras/redux-form/issues/1382
+</code></pre><h4 id="生成二维码插件"><a href="#生成二维码插件" class="headerlink" title="生成二维码插件"></a>生成二维码插件</h4><pre><code>https://github.com/soldair/node-qrcode
+</code></pre><h4 id="care-about"><a href="#care-about" class="headerlink" title="care about"></a>care about</h4><pre><code>1、元素要有闭合标签，避免提示错误
+2、在react中使用this.变量名（当该变量变动时，不会触发render），
+如要render也更新，需将变量放在this.state里面
+</code></pre><h4 id="使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow"><a href="#使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow" class="headerlink" title="使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})"></a>使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})</h4><h4 id="Data-change-without-mutation"><a href="#Data-change-without-mutation" class="headerlink" title="Data change without mutation"></a>Data change without mutation</h4><pre><code>eg: var player = {score: 1, name: &apos;Jeff&apos;};
+
+    var newPlayer = Object.assign({}, player, {score: 2});
+    // Now player is unchanged, but newPlayer is {score: 2, name: &apos;Jeff&apos;}
+
+    // Or if you are using object spread syntax proposal, you can write:
+    // var newPlayer = {...player, score: 2};
+</code></pre>
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2017/10/22/about-react/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2017/10/22/about-react/" class="archive-article-date">
+  	<time datetime="2017-10-22T13:36:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-command-magic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
