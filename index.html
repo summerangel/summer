@@ -149,6 +149,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-custom-map-overlay" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/custom-map-overlay/">An example to custom baidu map&#39;s overlay</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、Your-html-looks-like"><a href="#一、Your-html-looks-like" class="headerlink" title="一、Your html looks like:"></a>一、Your html looks like:</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;panel&quot;&gt;</div><div class="line">   &lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;显示地图&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h4 id="二、The-core-code-to-realize-custom-style"><a href="#二、The-core-code-to-realize-custom-style" class="headerlink" title="二、The core code to realize custom style:"></a>二、The core code to realize custom style:</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line">const longitude = 121.532419</div><div class="line">const latitude = 31.242774</div><div class="line">const mp = new BMap.Map(&apos;map&apos;)</div><div class="line">const point = new BMap.Point(longitude, latitude)</div><div class="line">mp.centerAndZoom(point, 15)</div><div class="line">// 红色圆点</div><div class="line">function CustomRedCircle(point) &#123;</div><div class="line">  this._point = point</div><div class="line">&#125;</div><div class="line">// 复杂的自定义覆盖物</div><div class="line">function ComplexCustomOverlay(point, text) &#123;</div><div class="line">  this._point = point;</div><div class="line">  this._text = text;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype = new BMap.Overlay();</div><div class="line">ComplexCustomOverlay.prototype = new BMap.Overlay();</div><div class="line">ComplexCustomOverlay.prototype.initialize = function(map) &#123;</div><div class="line">  this._map = map;</div><div class="line">  var div = this._div = document.createElement(&apos;div&apos;);</div><div class="line">  div.style.position = &apos;absolute&apos;;</div><div class="line">  div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat) + 1;</div><div class="line">  div.style.backgroundColor = &apos;#FFFFFF&apos;;</div><div class="line">  div.style.color = &apos;#333333&apos;;</div><div class="line">  div.style.padding = &apos;10px 7px 10px 10px&apos;;</div><div class="line">  div.style.whiteSpace = &apos;nowrap&apos;</div><div class="line">  div.style.MozUserSelect = &apos;none&apos;</div><div class="line">  div.style.fontSize = &apos;14px&apos;</div><div class="line">  var span = this._span = document.createElement(&apos;span&apos;);</div><div class="line">  div.appendChild(span);</div><div class="line">  span.appendChild(document.createTextNode(this._text));</div><div class="line">  var that = this;</div><div class="line"></div><div class="line">  var arrow = this._arrow = document.createElement(&apos;div&apos;);</div><div class="line">  arrow.style.position = &apos;absolute&apos;;</div><div class="line">  arrow.style.top = &apos;35px&apos;;</div><div class="line">  arrow.style.left = &apos;30px&apos;;</div><div class="line">  arrow.style.overflow = &apos;hidden&apos;;</div><div class="line">  arrow.style.borderTop = &apos;13px solid #fff&apos;;</div><div class="line">  arrow.style.borderLeft = &apos;10px solid transparent&apos;;</div><div class="line">  arrow.style.borderRight = &apos;10px solid transparent&apos;;</div><div class="line">  div.appendChild(arrow);</div><div class="line"></div><div class="line">  mp.getPanes().labelPane.appendChild(div);</div><div class="line"></div><div class="line">  return div;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype.initialize = function (map) &#123;</div><div class="line">  this._map = map;</div><div class="line">  let div = this._div = document.createElement(&apos;div&apos;);</div><div class="line">  div.style.position = &apos;absolute&apos;;</div><div class="line">  div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);</div><div class="line">  div.style.backgroundColor = &apos;#C81528&apos;;</div><div class="line">  div.style.width = &apos;17px&apos;;</div><div class="line">  div.style.height = &apos;17px&apos;;</div><div class="line">  div.style.borderRadius = &apos;17px&apos;;</div><div class="line">  mp.getPanes().labelPane.appendChild(div);</div><div class="line">  return div;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype.draw = function () &#123;</div><div class="line">  const map = this._map;</div><div class="line">  const pixel = map.pointToOverlayPixel(this._point);</div><div class="line">  this._div.style.left = pixel.x - 8 + &apos;px&apos;;</div><div class="line">  this._div.style.top = pixel.y - 8 + &apos;px&apos;;</div><div class="line">&#125;</div><div class="line">ComplexCustomOverlay.prototype.draw = function() &#123;</div><div class="line">  const map = this._map;</div><div class="line">  const pixel = map.pointToOverlayPixel(this._point);</div><div class="line">  this._div.style.left = pixel.x - parseInt(this._arrow.style.left) - 10 + &apos;px&apos;;</div><div class="line">  this._div.style.top = pixel.y - 50 + &apos;px&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const myOverlay = new ComplexCustomOverlay(point, &apos;静安区 大宁广场&apos;)</div><div class="line">const marker = new CustomRedCircle(point)</div><div class="line">mp.addOverlay(myOverlay)</div><div class="line">mp.addOverlay(marker)</div><div class="line">mp.disableDragging()</div><div class="line">mp.disableDoubleClickZoom()</div><div class="line">mp.disablePinchToZoom()</div></pre></td></tr></table></figure>
+<h4 id="三、At-the-end-of-the-core-code-is-to-disable-the-operation-to-the-map-make-the-map-just-the-meaning-of-show"><a href="#三、At-the-end-of-the-core-code-is-to-disable-the-operation-to-the-map-make-the-map-just-the-meaning-of-show" class="headerlink" title="三、At the end of the core code is to disable the operation to the map,make the map just the meaning of show"></a>三、At the end of the core code is to disable the operation to the map,make the map just the meaning of show</h4><p>  It tooks time to find all the attributes,if you are the first time to use it, you can refer to the document of<br>  <a href="http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html" target="_blank" rel="external">baidu’s map api</a>,it’s useful.</p>
+<p>  If you are familar with it, forget it.</p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/05/22/custom-map-overlay/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/05/22/custom-map-overlay/" class="archive-article-date">
+  	<time datetime="2018-05-22T15:25:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">baidu-map</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-problem-records" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1077,180 +1161,6 @@ console.log = function() {
 
 
   
-    <article id="post-about-javascript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/22/about-javascript/">about-javascript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names"><a href="#1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names" class="headerlink" title="1、1) Use computed property names when creating objects with dynamic property names."></a>1、1) Use computed property names when creating objects with dynamic property names.</h4><pre><code> eg: function getKey(k) {
-       return `a key named ${k}`;
-     }
-     const obj = {
-       id: 5,
-       name: &apos;San Francisco&apos;,
-       [getKey(&apos;enabled&apos;)]: true,
-     };
-
-2) Use array spreads ... to copy arrays.
-
-   eg: const len = items.length;
-       const itemsCopy = [];
-       const itemsCopy = [...items];
-
-3) To convert an array-like object to an array, use Array.from.
-
-   eg: const foo = document.querySelectorAll(&apos;.foo&apos;);
-       const nodes = Array.from(foo);
-
-4) Brilliant Array.prototype.reduce()
-
-   eg: // friends - an array of objects
-       // where object field &quot;books&quot; - list of favorite books
-       var friends = [{
-         name: &apos;Anna&apos;,
-         books: [&apos;Bible&apos;, &apos;Harry Potter&apos;],
-         age: 21
-       }, {
-         name: &apos;Bob&apos;,
-         books: [&apos;War and peace&apos;, &apos;Romeo and Juliet&apos;],
-         age: 26
-       }, {
-         name: &apos;Alice&apos;,
-         books: [&apos;The Lord of the Rings&apos;, &apos;The Shining&apos;],
-         age: 18
-       }];
-
-       // allbooks - list which will contain all friends&apos; books +
-       // additional list contained in initialValue
-       var allbooks = friends.reduce(function(prev, curr) {
-         return [...prev, ...curr.books];
-       }, [&apos;Alphabet&apos;]);
-
-       // allbooks = [
-       //   &apos;Alphabet&apos;, &apos;Bible&apos;, &apos;Harry Potter&apos;, &apos;War and peace&apos;,
-       //   &apos;Romeo and Juliet&apos;, &apos;The Lord of the Rings&apos;,
-       //   &apos;The Shining&apos;
-       // ]
-
-5) Use object destructuring when accessing and using multiple properties of an object. jscs:
-
-   eg: // good
-       function getFullName(user) {
-         const { firstName, lastName } = user;
-         return `${firstName} ${lastName}`;
-       }
-
-       // best
-       function getFullName({ firstName, lastName }) {
-         return `${firstName} ${lastName}`;
-       }
-
-6) Never use arguments, opt to use rest syntax ... instead
-
-   eg: // bad
-       function concatenateAll() {
-         const args = Array.prototype.slice.call(arguments);
-         return args.join(&apos;&apos;);
-       }
-
-       // good
-       function concatenateAll(...args) {
-         return args.join(&apos;&apos;);
-       }
-
-7) Never mutate parameters
-
-   eg: // bad
-       function f1(obj) {
-         obj.key = 1;
-       };
-
-       // good
-       function f2(obj) {
-         const key = Object.prototype.hasOwnProperty.call(obj, &apos;key&apos;) ? obj.key : 1;
-       };
-</code></pre><h4 id="Check-is-weixin-or-is-alipay"><a href="#Check-is-weixin-or-is-alipay" class="headerlink" title="Check is weixin or is alipay:"></a>Check is weixin or is alipay:</h4><pre><code>function IsWeixinOrAlipay(){
-    var ua = window.navigator.userAgent.toLowerCase();
-    //判断是不是微信
-    if (ua.indexOf(&apos;micromessenger&apos;) &gt;= 0) {
-        return &quot;WeiXIN&quot;;
-    }
-    //判断是不是支付宝
-    if (ua.indexOf(&apos;alipayclient&apos;) &gt;= 0) {
-        return &quot;Alipay&quot;;
-    }
-    //哪个都不是
-    return &quot;false&quot;;
-}
-</code></pre><h4 id="初始化一个所有元素都相同的数组"><a href="#初始化一个所有元素都相同的数组" class="headerlink" title="初始化一个所有元素都相同的数组"></a>初始化一个所有元素都相同的数组</h4><pre><code>eg:Array(8).fill(1) //初始化一个数组，元素都为1
-</code></pre><h4 id="We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array"><a href="#We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array" class="headerlink" title="We call .slice() to copy the squares array instead of mutating the existing array"></a>We call .slice() to copy the squares array instead of mutating the existing array</h4><pre><code>eg: const squares = this.state.squares.slice();
-        squares[i] = &apos;X&apos;;
-        this.setState({squares: squares});
-</code></pre><h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><pre><code>eg:  JSON.parse(cashier.replace(/&amp;quot;/gi,&apos;&quot;&apos;));
-</code></pre>
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/10/22/about-javascript/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2017/10/22/about-javascript/" class="archive-article-date">
-  	<time datetime="2017-10-22T13:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1354,6 +1264,10 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">mini-programme</a>
               </li>
              
@@ -1425,7 +1339,7 @@ console.log = function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">I will never give up.</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Never will I give up.</div>
   	  	
     	</section>
     

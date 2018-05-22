@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://summerangel.github.io">
-  <title>about-css | 随变</title>
+  <title>An example to custom baidu map&#39;s overlay | 随变</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_25790_aaespums8dcuwhfr.css">
-  <meta name="description" content="单行显示省略号： overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap; 多行显示省略号：  display: -webkit-box;  -webkit-line-clamp: 2; （多少行的时候显示）  -webkit-box-orient: vertical;  overflow: hidden;  三角箭头： .">
-<meta name="keywords" content="技术">
+  <meta name="description" content="一、Your html looks like: 123&amp;lt;div class=&amp;quot;panel&amp;quot;&amp;gt;   &amp;lt;div id=&amp;quot;map&amp;quot; class=&amp;quot;map&amp;quot;&amp;gt;显示地图&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 二、The core code to realize custom style: 1234567891011">
+<meta name="keywords" content="baidu-map">
 <meta property="og:type" content="article">
-<meta property="og:title" content="about-css">
-<meta property="og:url" content="https://summerangel.github.io/2017/10/22/about-css/index.html">
+<meta property="og:title" content="An example to custom baidu map&#39;s overlay">
+<meta property="og:url" content="https://summerangel.github.io/2018/05/22/custom-map-overlay/index.html">
 <meta property="og:site_name" content="随变">
-<meta property="og:description" content="单行显示省略号： overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap; 多行显示省略号：  display: -webkit-box;  -webkit-line-clamp: 2; （多少行的时候显示）  -webkit-box-orient: vertical;  overflow: hidden;  三角箭头： .">
-<meta property="og:updated_time" content="2017-12-27T07:26:01.000Z">
+<meta property="og:description" content="一、Your html looks like: 123&amp;lt;div class=&amp;quot;panel&amp;quot;&amp;gt;   &amp;lt;div id=&amp;quot;map&amp;quot; class=&amp;quot;map&amp;quot;&amp;gt;显示地图&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 二、The core code to realize custom style: 1234567891011">
+<meta property="og:updated_time" content="2018-05-22T15:41:38.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about-css">
-<meta name="twitter:description" content="单行显示省略号： overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap; 多行显示省略号：  display: -webkit-box;  -webkit-line-clamp: 2; （多少行的时候显示）  -webkit-box-orient: vertical;  overflow: hidden;  三角箭头： .">
+<meta name="twitter:title" content="An example to custom baidu map&#39;s overlay">
+<meta name="twitter:description" content="一、Your html looks like: 123&amp;lt;div class=&amp;quot;panel&amp;quot;&amp;gt;   &amp;lt;div id=&amp;quot;map&amp;quot; class=&amp;quot;map&amp;quot;&amp;gt;显示地图&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 二、The core code to realize custom style: 1234567891011">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -149,14 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-about-css" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="[layout]-custom-map-overlay" class="article article-type-[layout] " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      about-css
+      An example to custom baidu map&#39;s overlay
     </h1>
   
 
@@ -164,80 +164,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="单行显示省略号："><a href="#单行显示省略号：" class="headerlink" title="单行显示省略号："></a>单行显示省略号：</h4><pre><code> overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
-多行显示省略号：
- display: -webkit-box;
- -webkit-line-clamp: 2; （多少行的时候显示）
- -webkit-box-orient: vertical;
- overflow: hidden;
+        <h4 id="一、Your-html-looks-like"><a href="#一、Your-html-looks-like" class="headerlink" title="一、Your html looks like:"></a>一、Your html looks like:</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;panel&quot;&gt;</div><div class="line">   &lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;显示地图&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h4 id="二、The-core-code-to-realize-custom-style"><a href="#二、The-core-code-to-realize-custom-style" class="headerlink" title="二、The core code to realize custom style:"></a>二、The core code to realize custom style:</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line">const longitude = 121.532419</div><div class="line">const latitude = 31.242774</div><div class="line">const mp = new BMap.Map(&apos;map&apos;)</div><div class="line">const point = new BMap.Point(longitude, latitude)</div><div class="line">mp.centerAndZoom(point, 15)</div><div class="line">// 红色圆点</div><div class="line">function CustomRedCircle(point) &#123;</div><div class="line">  this._point = point</div><div class="line">&#125;</div><div class="line">// 复杂的自定义覆盖物</div><div class="line">function ComplexCustomOverlay(point, text) &#123;</div><div class="line">  this._point = point;</div><div class="line">  this._text = text;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype = new BMap.Overlay();</div><div class="line">ComplexCustomOverlay.prototype = new BMap.Overlay();</div><div class="line">ComplexCustomOverlay.prototype.initialize = function(map) &#123;</div><div class="line">  this._map = map;</div><div class="line">  var div = this._div = document.createElement(&apos;div&apos;);</div><div class="line">  div.style.position = &apos;absolute&apos;;</div><div class="line">  div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat) + 1;</div><div class="line">  div.style.backgroundColor = &apos;#FFFFFF&apos;;</div><div class="line">  div.style.color = &apos;#333333&apos;;</div><div class="line">  div.style.padding = &apos;10px 7px 10px 10px&apos;;</div><div class="line">  div.style.whiteSpace = &apos;nowrap&apos;</div><div class="line">  div.style.MozUserSelect = &apos;none&apos;</div><div class="line">  div.style.fontSize = &apos;14px&apos;</div><div class="line">  var span = this._span = document.createElement(&apos;span&apos;);</div><div class="line">  div.appendChild(span);</div><div class="line">  span.appendChild(document.createTextNode(this._text));</div><div class="line">  var that = this;</div><div class="line"></div><div class="line">  var arrow = this._arrow = document.createElement(&apos;div&apos;);</div><div class="line">  arrow.style.position = &apos;absolute&apos;;</div><div class="line">  arrow.style.top = &apos;35px&apos;;</div><div class="line">  arrow.style.left = &apos;30px&apos;;</div><div class="line">  arrow.style.overflow = &apos;hidden&apos;;</div><div class="line">  arrow.style.borderTop = &apos;13px solid #fff&apos;;</div><div class="line">  arrow.style.borderLeft = &apos;10px solid transparent&apos;;</div><div class="line">  arrow.style.borderRight = &apos;10px solid transparent&apos;;</div><div class="line">  div.appendChild(arrow);</div><div class="line"></div><div class="line">  mp.getPanes().labelPane.appendChild(div);</div><div class="line"></div><div class="line">  return div;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype.initialize = function (map) &#123;</div><div class="line">  this._map = map;</div><div class="line">  let div = this._div = document.createElement(&apos;div&apos;);</div><div class="line">  div.style.position = &apos;absolute&apos;;</div><div class="line">  div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);</div><div class="line">  div.style.backgroundColor = &apos;#C81528&apos;;</div><div class="line">  div.style.width = &apos;17px&apos;;</div><div class="line">  div.style.height = &apos;17px&apos;;</div><div class="line">  div.style.borderRadius = &apos;17px&apos;;</div><div class="line">  mp.getPanes().labelPane.appendChild(div);</div><div class="line">  return div;</div><div class="line">&#125;</div><div class="line">CustomRedCircle.prototype.draw = function () &#123;</div><div class="line">  const map = this._map;</div><div class="line">  const pixel = map.pointToOverlayPixel(this._point);</div><div class="line">  this._div.style.left = pixel.x - 8 + &apos;px&apos;;</div><div class="line">  this._div.style.top = pixel.y - 8 + &apos;px&apos;;</div><div class="line">&#125;</div><div class="line">ComplexCustomOverlay.prototype.draw = function() &#123;</div><div class="line">  const map = this._map;</div><div class="line">  const pixel = map.pointToOverlayPixel(this._point);</div><div class="line">  this._div.style.left = pixel.x - parseInt(this._arrow.style.left) - 10 + &apos;px&apos;;</div><div class="line">  this._div.style.top = pixel.y - 50 + &apos;px&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const myOverlay = new ComplexCustomOverlay(point, &apos;静安区 大宁广场&apos;)</div><div class="line">const marker = new CustomRedCircle(point)</div><div class="line">mp.addOverlay(myOverlay)</div><div class="line">mp.addOverlay(marker)</div><div class="line">mp.disableDragging()</div><div class="line">mp.disableDoubleClickZoom()</div><div class="line">mp.disablePinchToZoom()</div></pre></td></tr></table></figure>
+<h4 id="三、At-the-end-of-the-core-code-is-to-disable-the-operation-to-the-map-make-the-map-just-the-meaning-of-show"><a href="#三、At-the-end-of-the-core-code-is-to-disable-the-operation-to-the-map-make-the-map-just-the-meaning-of-show" class="headerlink" title="三、At the end of the core code is to disable the operation to the map,make the map just the meaning of show"></a>三、At the end of the core code is to disable the operation to the map,make the map just the meaning of show</h4><p>  It tooks time to find all the attributes,if you are the first time to use it, you can refer to the document of<br>  <a href="http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html" target="_blank" rel="external">baidu’s map api</a>,it’s useful.</p>
+<p>  If you are familar with it, forget it.</p>
 
-三角箭头：
-.left_arrow {
-      position: relative;
-      .arrow_left {
-        margin: 5px auto;
-        width: 0;
-        height: 0;
-        position: absolute;
-        left: -11px;
-        top: -7px;
-        .triangle_top {
-          border-left: 12px solid transparent;
-          border-right: 0px solid transparent;
-          border-bottom: 27px solid #FAD961;
-        }
-        .triangle_bottom {
-          border-left: 12px solid transparent;
-          border-right: 0 solid transparent;
-          border-top: 27px solid #FAD961;
-        }
-      }
-      .count_down {
-        padding: 6px 14px 7px 15px;
-        height: 51px;
-        background: linear-gradient(90deg, #FAD961 0%, #FF8E4E 100%);
-      }
-    }
-</code></pre><h4 id="在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><a href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）" class="headerlink" title="在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）"></a>在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</h4><h4 id="垂直居中-https-segmentfault-com-a-1190000000468431"><a href="#垂直居中-https-segmentfault-com-a-1190000000468431" class="headerlink" title="垂直居中 (https://segmentfault.com/a/1190000000468431)"></a>垂直居中 (<a href="https://segmentfault.com/a/1190000000468431" target="_blank" rel="external">https://segmentfault.com/a/1190000000468431</a>)</h4><pre><code>.center-vertical {
-  position: relative;
-  top: 50%;
-  transform: transformY(-50%);
-}
-
-或
-
-.center-vertical {
-   position: relative;
-   left: 50%;
-   transform: transformX(-50%);
-}
-</code></pre><h4 id="多重边框"><a href="#多重边框" class="headerlink" title="多重边框"></a>多重边框</h4><pre><code>div {
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);
-    height: 200px;
-    margin: 50px auto;
-    width: 400px
-}
-</code></pre><h4 id="浮点数转成整型：-0和-或"><a href="#浮点数转成整型：-0和-或" class="headerlink" title="浮点数转成整型：|0和~~或+"></a>浮点数转成整型：|0和~~或+</h4><pre><code>eg: var foo = (12.4 / 4.13) | 0;//结果为3
-    var bar = ~~(12.4 / 4.13);//结果为3
-</code></pre><h4 id="关于console"><a href="#关于console" class="headerlink" title="关于console"></a>关于console</h4><pre><code>var _log = console.log;
-console.log = function() {
-  _log.call(console, &apos;%c&apos; + [].slice.call(arguments).join(&apos; &apos;), &apos;color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);&apos;);
-};
-</code></pre><h4 id="半圆角："><a href="#半圆角：" class="headerlink" title="半圆角："></a>半圆角：</h4><pre><code>.left_circle {
-        left: -2px;
-        border: 1px solid #D6D6D6;
-        border-radius: 0 100% 100% 0/50%;
-        border-left: none;
-      }
-      .right_circle {
-        border: 1px solid #D6D6D6;
-        border-radius: 100% 0 0 100%/50%;
-        border-right: none;
-        right: -2px;
-      }
-</code></pre>
       
 
       
@@ -280,8 +211,8 @@ console.log = function() {
 
       
       <span>
-        <a href="/2017/10/22/about-css/" class="archive-article-date">
-  	<time datetime="2017-10-22T13:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+        <a href="/2018/05/22/custom-map-overlay/" class="archive-article-date">
+  	<time datetime="2018-05-22T15:25:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
 </a>
       </span>
       
@@ -296,7 +227,7 @@ console.log = function() {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">baidu-map</a>
         		</li>
       		
 		</ul>
@@ -350,7 +281,7 @@ console.log = function() {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2017/10/22/about-css/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2018/05/22/custom-map-overlay/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -363,18 +294,9 @@ console.log = function() {
   
 <nav id="article-nav">
   
-    <a href="/2017/11/10/about-plugin-use/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          about-plugin-use
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/22/about-javascript/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">about-javascript</div>
+    <a href="/2018/05/15/problem-records/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Problems records</div>
       <i class="icon-circle-right"></i>
     </a>
   
