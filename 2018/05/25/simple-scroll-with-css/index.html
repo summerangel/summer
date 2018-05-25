@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://summerangel.github.io">
-  <title>Some simple snippets about mini-programme | 随变</title>
+  <title>Simple scroll realized by css | 随变</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_25790_aaespums8dcuwhfr.css">
-  <meta name="description" content="一、Remove the scroll bar in scroll-view12345::-webkit-scrollbar &amp;#123;     width: 0;     height: 0;     color: transparent;&amp;#125; 二、Enable scroll in scroll-view  the following css are needed to let the">
-<meta name="keywords" content="mini-programme">
+  <meta name="description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Some simple snippets about mini-programme">
-<meta property="og:url" content="https://summerangel.github.io/2018/05/07/mini-programme-snippets/index.html">
+<meta property="og:title" content="Simple scroll realized by css">
+<meta property="og:url" content="https://summerangel.github.io/2018/05/25/simple-scroll-with-css/index.html">
 <meta property="og:site_name" content="随变">
-<meta property="og:description" content="一、Remove the scroll bar in scroll-view12345::-webkit-scrollbar &amp;#123;     width: 0;     height: 0;     color: transparent;&amp;#125; 二、Enable scroll in scroll-view  the following css are needed to let the">
-<meta property="og:updated_time" content="2018-05-07T15:28:17.984Z">
+<meta property="og:description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
+<meta property="og:updated_time" content="2018-05-25T15:11:54.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Some simple snippets about mini-programme">
-<meta name="twitter:description" content="一、Remove the scroll bar in scroll-view12345::-webkit-scrollbar &amp;#123;     width: 0;     height: 0;     color: transparent;&amp;#125; 二、Enable scroll in scroll-view  the following css are needed to let the">
+<meta name="twitter:title" content="Simple scroll realized by css">
+<meta name="twitter:description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -149,14 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mini-programme-snippets" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="[layout]-simple-scroll-with-css" class="article article-type-[layout] " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Some simple snippets about mini-programme
+      Simple scroll realized by css
     </h1>
   
 
@@ -164,20 +164,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一、Remove-the-scroll-bar-in-scroll-view"><a href="#一、Remove-the-scroll-bar-in-scroll-view" class="headerlink" title="一、Remove the scroll bar in scroll-view"></a>一、Remove the scroll bar in scroll-view</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">::-webkit-scrollbar &#123;</div><div class="line">     width: 0;</div><div class="line">     height: 0;</div><div class="line">     color: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h4 id="二、Enable-scroll-in-scroll-view"><a href="#二、Enable-scroll-in-scroll-view" class="headerlink" title="二、Enable scroll in scroll-view"></a>二、Enable scroll in scroll-view</h4><p>  the following css are needed to let the scroll-view to scroll:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">width: 100%;</div><div class="line">white-space: nowrap;</div></pre></td></tr></table></figure>
-<h4 id="三、Change-the-background-color-of-the-whole-page"><a href="#三、Change-the-background-color-of-the-whole-page" class="headerlink" title="三、Change the background-color of the whole page"></a>三、Change the background-color of the whole page</h4><p>   Add following to your css file:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Page &#123;</div><div class="line">  display: block;</div><div class="line">  min-height: 100%;</div><div class="line">  background-color: (here is the color you want);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="四、Using-the-unit-of-rpx-to-adjust-different-phone-size"><a href="#四、Using-the-unit-of-rpx-to-adjust-different-phone-size" class="headerlink" title="四、Using the unit of rpx to adjust different phone size"></a>四、Using the unit of rpx to adjust different phone size</h4><p>  The formula of transfer like following, use iphone6 as example:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1px = 2rpx;</div><div class="line">1rem = 750/20;</div></pre></td></tr></table></figure>
-<p>   if you want to know more about this, you can step into <a href="http://www.cnblogs.com/fayin/p/6346754.html" target="_blank" rel="external">this article</a></p>
-<h4 id="五、May-be-a-bug"><a href="#五、May-be-a-bug" class="headerlink" title="五、May be a bug"></a>五、May be a bug</h4><p>   Don’t add auto-focus to the element input,it will cause the death of your project(the situation I confronted was:<br>   I can’t go back nor scroll the page)</p>
-<h4 id="六、Something-I-always-forget"><a href="#六、Something-I-always-forget" class="headerlink" title="六、Something I always forget"></a>六、Something I always forget</h4><p>   Dynamically give a class to an element:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class=&quot;shopcart &#123;&#123; cartShow ? &apos;show&apos; : &apos;&apos; &#125;&#125;&quot;</div></pre></td></tr></table></figure>
-<p>   Add key to a recycle:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wx:key=&quot;unique&quot;</div></pre></td></tr></table></figure>
-<p>   All above are which I met after completing an static mini-project.</p>
+        <h4 id="Before-start-why-this-article-come-out"><a href="#Before-start-why-this-article-come-out" class="headerlink" title="Before start (why this article come out)"></a>Before start (why this article come out)</h4><p> At before time, I was tend to realize it by the library Swiper, which seems<br> too big and bad performance to left-right scroll.Actually we can realize it<br> by pure css in some degree,  I was told by my leader, so later I change it to<br> pure css.</p>
+<h4 id="Your-html"><a href="#Your-html" class="headerlink" title="Your html"></a>Your html</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent-wrap&quot;&gt;</div><div class="line">    &lt;div class=&quot;child-each-wrap&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div</div></pre></td></tr></table></figure>
+</code></pre><h4 id="Your-css"><a href="#Your-css" class="headerlink" title="Your css"></a>Your css</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.parent-wrap &#123;</div><div class="line">    overflow-x: scroll;</div><div class="line">    white-space: nowrap;  // here it seems necessary,if not add it, the</div><div class="line">    // scroll will take effect in the whole page,not the parent-wrap element</div><div class="line">    padding-bottom: 20px; // here it fix the problem the scroll style</div><div class="line">    // still show in IOS</div><div class="line">&#125;</div><div class="line"> .parent-wrap::-webkit-scrollbar &#123;</div><div class="line">    display: none // here is to clear the scroll style</div><div class="line"> &#125;</div><div class="line">.child-each-wrap &#123;</div><div class="line">     display: inline-block; // here is make sure the children are in the</div><div class="line">     // same line</div><div class="line">     margin-right: 40px;</div><div class="line">     width: 360px; // here you can custom your own style</div><div class="line">     height: 272px; // here you can custom your own style</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h4 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h4><p>   Though it looks simple enough, it took some time to implement it, just to<br> record it for the sake next time to use it.</p>
 
       
 
@@ -221,8 +211,8 @@
 
       
       <span>
-        <a href="/2018/05/07/mini-programme-snippets/" class="archive-article-date">
-  	<time datetime="2018-05-07T14:54:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+        <a href="/2018/05/25/simple-scroll-with-css/" class="archive-article-date">
+  	<time datetime="2018-05-25T14:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
 </a>
       </span>
       
@@ -237,7 +227,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mini-programme</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -291,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2018/05/07/mini-programme-snippets/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2018/05/25/simple-scroll-with-css/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +294,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/15/problem-records/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Problems records
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/03/about-transfer/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Share good method to transfer files between Mac and iphone</div>
+    <a href="/2018/05/22/custom-map-overlay/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">An example to custom baidu map&#39;s overlay</div>
       <i class="icon-circle-right"></i>
     </a>
   
