@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://summerangel.github.io">
-  <title>Simple scroll realized by css | 随变</title>
+  <title>Tag: react-native | 随变</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_25790_aaespums8dcuwhfr.css">
-  <meta name="description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
-<meta name="keywords" content="css">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Simple scroll realized by css">
-<meta property="og:url" content="https://summerangel.github.io/2018/05/25/simple-scroll-with-css/index.html">
+  <meta name="description" content="被吊打的不行">
+<meta property="og:type" content="website">
+<meta property="og:title" content="随变">
+<meta property="og:url" content="https://summerangel.github.io/tags/react-native/index.html">
 <meta property="og:site_name" content="随变">
-<meta property="og:description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
-<meta property="og:updated_time" content="2018-05-25T15:11:54.537Z">
+<meta property="og:description" content="被吊打的不行">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Simple scroll realized by css">
-<meta name="twitter:description" content="Before start (why this article come out) At before time, I was tend to realize it by the library Swiper, which seems too big and bad performance to left-right scroll.Actually we can realize it by pure">
+<meta name="twitter:title" content="随变">
+<meta name="twitter:description" content="被吊打的不行">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -149,212 +147,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="[layout]-simple-scroll-with-css" class="article article-type-[layout] " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Simple scroll realized by css
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-[layout]">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/05/28/about-react-native/" class="archive-article-date">
+  	<time datetime="2018-05-28T14:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/05/28/about-react-native/">Holes in exploring react native</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Before-start-why-this-article-come-out"><a href="#Before-start-why-this-article-come-out" class="headerlink" title="Before start (why this article come out)"></a>Before start (why this article come out)</h4><p> At before time, I was tend to realize it by the library Swiper, which seems<br> too big and bad performance to left-right scroll.Actually we can realize it<br> by pure css in some degree,  I was told by my leader, so later I change it to<br> pure css.</p>
-<h4 id="Your-html"><a href="#Your-html" class="headerlink" title="Your html"></a>Your html</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent-wrap&quot;&gt;</div><div class="line">    &lt;div class=&quot;child-each-wrap&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div</div></pre></td></tr></table></figure>
-</code></pre><h4 id="Your-css"><a href="#Your-css" class="headerlink" title="Your css"></a>Your css</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.parent-wrap &#123;</div><div class="line">    overflow-x: scroll;</div><div class="line">    white-space: nowrap;  // here it seems necessary,if not add it, the</div><div class="line">    // scroll will take effect in the whole page,not the parent-wrap element</div><div class="line">    padding-bottom: 20px; // here it fix the problem the scroll style</div><div class="line">    // still show in IOS</div><div class="line">&#125;</div><div class="line"> .parent-wrap::-webkit-scrollbar &#123;</div><div class="line">    display: none // here is to clear the scroll style</div><div class="line"> &#125;</div><div class="line">.child-each-wrap &#123;</div><div class="line">     display: inline-block; // here is make sure the children are in the</div><div class="line">     // same line</div><div class="line">     margin-right: 40px;</div><div class="line">     width: 360px; // here you can custom your own style</div><div class="line">     height: 272px; // here you can custom your own style</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h4 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h4><p>   Though it looks simple enough, it took some time to implement it, just to<br> record it for the sake next time to use it.</p>
-
-      
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Just for fun,do not mind it<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wechat_pay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/05/25/simple-scroll-with-css/" class="archive-article-date">
-  	<time datetime="2018-05-25T14:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://summerangel.github.io/2018/05/25/simple-scroll-with-css/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/05/28/about-react-native/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Holes in exploring react native
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/05/22/custom-map-overlay/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">An example to custom baidu map&#39;s overlay</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'true'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </section>
-  
-
-  
+    
 
 
           </div>
@@ -378,9 +224,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
