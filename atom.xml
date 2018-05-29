@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-05-28T15:26:09.358Z</updated>
+  <updated>2018-05-28T15:45:43.081Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://summerangel.github.io/2018/05/28/about-react-native/"/>
     <id>https://summerangel.github.io/2018/05/28/about-react-native/</id>
     <published>2018-05-28T14:58:57.000Z</published>
-    <updated>2018-05-28T15:26:09.358Z</updated>
+    <updated>2018-05-28T15:45:43.081Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="一、Hole-one"><a href="#一、Hole-one" class="headerlink" title="一、Hole one"></a>一、Hole one</h4><p>  When installing the react-native environment, confront the following:</p>  <img src="/2018/05/28/about-react-native/hole_one.jpg" alt="caused by file missing" title="caused by file missing"><p> It took me almost one day to find this problem out,for I was first day to come this group to work on this react-native project,though I found another way to<br> fix this,I was curious to know what mistake cause this. Ok, focus came,it was caused by some missing files, which may be the window’s fault(another colleague passed it to the git repository using window system computer,then the window didn’t treat that file as a file, because it was treated as a reference addresss in ios,according to my ios<br> colleague), red rectangle is the missing file.</p>  <img src="/2018/05/28/about-react-native/hole_reason.jpg" alt="caused by file missing" title="caused by file missing">]]></content>
+    <content type="html"><![CDATA[<h4 id="一、Hole-one"><a href="#一、Hole-one" class="headerlink" title="一、Hole one"></a>一、Hole one</h4><p>  When installing the react-native environment, confront the following:</p>  <img src="/2018/05/28/about-react-native/hole_one.jpg" alt="caused by file missing" title="caused by file missing"><p> It took me almost one day to find this problem out,for I was first day to come this group to work on this react-native project,though I found another way to<br> fix this,I was curious to know what mistake cause this. Ok, focus came,it was caused by some missing files, which may be the window’s fault(another colleague passed it to the git repository using window system computer,then the window didn’t treat that file as a file, because it was treated as a reference addresss in ios,according to my ios<br> colleague), red rectangle is the missing file.</p>  <img src="/2018/05/28/about-react-native/hole_reason.jpg" alt="caused by file missing" title="caused by file missing"><h4 id="二、Debug-in-Browser-Mac-ios"><a href="#二、Debug-in-Browser-Mac-ios" class="headerlink" title="二、Debug in Browser (Mac ios)"></a>二、Debug in Browser (Mac ios)</h4><pre><code>1、 Press command + D in simulator, then the debug menu will show;2、 Menu One: Reload, equal to the quick command: command + R;3、 Menu Two: Debug JS Remotely, will open it in browser( http://localhost:8081/debugger-ui ) for you,let you debug like web project;</code></pre><p>   Reference to <a href="http://www.hangge.com/blog/cache/detail_1480.html" target="_blank" rel="external">this article</a></p>]]></content>
     
     <summary type="html">
     
