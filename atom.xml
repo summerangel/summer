@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-06-10T13:42:56.174Z</updated>
+  <updated>2018-06-11T14:43:01.673Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://summerangel.github.io/2018/06/10/feeling/"/>
     <id>https://summerangel.github.io/2018/06/10/feeling/</id>
     <published>2018-06-10T13:20:10.000Z</published>
-    <updated>2018-06-10T13:42:56.174Z</updated>
+    <updated>2018-06-11T14:43:01.673Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="Just-boring-so-write-something"><a href="#Just-boring-so-write-something" class="headerlink" title="Just boring so write something"></a>Just boring so write something</h4><p>  Lately I was troubled by my computer, for its small volume after installed xcode,I almost can’t work,and today I bought CleanMyMac, actually I installed it before,which is the free one and had no effect at all, instead, the bought one is incredibly effective, release my mac almost double usable volume,it’s really awesome,and make it possible to install the software ps.I can learn some ps skill in my leisure time.Learning is great and full of joy.Happy~~</p><p>  I’m always thinking about updating my blog style(the format is so awful),but as always have no time,there is so much things to do,and time is so fast.So much to learn but have no that much of time.Horrible~~</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="Just-boring-so-write-something"><a href="#Just-boring-so-write-something" class="headerlink" title="Just boring so write something"></a>Just boring so write something</h4><p>  Lately I was troubled by my computer, for its small volume after installed xcode,I almost can’t work,and today I bought CleanMyMac, actually I installed it before,which is the free one and had no effect at all, instead, the bought one is incredibly effective, release my mac almost double usable volume,it’s really awesome,and make it possible to install the software ps.I can learn some ps skill in my leisure time.Learning is great and full of joy.Happy~~</p><p>  I’m always thinking about updating my blog style(the format is so awful),but as always have no time,there is so much things to do,and time is so fast.So much to learn but have no that much of time.Horrible~~</p><h4 id="New-skill-get-get-dimensions-automately-through-ps-and-zeplin"><a href="#New-skill-get-get-dimensions-automately-through-ps-and-zeplin" class="headerlink" title="New skill get(get dimensions automately through ps and zeplin)"></a>New skill get(get dimensions automately through ps and zeplin)</h4><p>  1、Install ps;<br>  2、Install zeplin;<br>  3、Link zeplin with ps;<a href="https://support.zeplin.io/photoshop-integration/installing-photoshop-plugin-on-mac" target="_blank" rel="external">here is official tutorial</a><br>  3、Make it work: <a href="https://support.zeplin.io/photoshop-integration/working-with-artboards-in-photoshop" target="_blank" rel="external">this one is helpful</a><br>  4、And you can use this way to get dimension to write your website.</p><p>Actually there exists better software than ps to do this,like sketch,but my computer has small memory,I just use ps to do this,thankful zeplin supports it.</p><h4 id="There-are-so-many-awesome-softwares-to-save-our-time"><a href="#There-are-so-many-awesome-softwares-to-save-our-time" class="headerlink" title="There are so many awesome softwares to save our time."></a>There are so many awesome softwares to save our time.</h4><p> Today’s homework is still delay,it’s late in night again, and I am so sleepy that my eye can’t open. Actually every day is sleepy,I need more more more sleep~~~</p>]]></content>
     
     <summary type="html">
     
@@ -353,28 +353,6 @@
   
   <entry>
     <title>good-code-framents</title>
-    <link href="https://summerangel.github.io/2017/10/22/good-code-framents/"/>
-    <id>https://summerangel.github.io/2017/10/22/good-code-framents/</id>
-    <published>2017-10-22T13:30:12.000Z</published>
-    <updated>2018-04-02T09:24:46.615Z</updated>
-    
-    <content type="html"><![CDATA[<img src="/2017/10/22/good-code-framents/sun.jpg" alt="A lot need to learn,I'm such stupid" title="A lot need to learn,I'm such stupid"><h4 id="1、将一维数组转为二维数组："><a href="#1、将一维数组转为二维数组：" class="headerlink" title="1、将一维数组转为二维数组："></a>1、将一维数组转为二维数组：</h4><pre><code>var arr=[1,2,3,4,5,6,7],ar=[];               while(arr.length)ar.push(arr.splice(0,3));</code></pre><h4 id="2、手机号校验："><a href="#2、手机号校验：" class="headerlink" title="2、手机号校验："></a>2、手机号校验：</h4><pre><code>if ((mobile.length === 0) || !/^0?(13|15|18|14|17)[0-9]{9}$/.test(phone)) {    alert(&apos;请输入正确的手机号码&apos;);    return false;    }</code></pre><h4 id="3、密码长度只能为8-20位"><a href="#3、密码长度只能为8-20位" class="headerlink" title="3、密码长度只能为8~20位:"></a>3、密码长度只能为8~20位:</h4><pre><code>if (!/^[0-9a-zA-Z]{8,20}$/.test(password)) {    alert(&apos;密码长度只能为8~20位&apos;);    return false;}</code></pre><h4 id="4、验证6位验证码："><a href="#4、验证6位验证码：" class="headerlink" title="4、验证6位验证码："></a>4、验证6位验证码：</h4><pre><code>checkPayPassword(val) {    return /^\d{6}$/.test(val)    }</code></pre><h4 id="5、手机每四位空格隔开"><a href="#5、手机每四位空格隔开" class="headerlink" title="5、手机每四位空格隔开"></a>5、手机每四位空格隔开</h4><pre><code>phoneNoSplit (phone) {    let reg = /^(\d{4})(\d{4})(\d{3})$/;    let matches = reg.exec(phone);    return matches[1] + &apos; &apos; + matches[2] + &apos; &apos; + matches[3];  }</code></pre><h4 id="6、只输入数字带两位小数点"><a href="#6、只输入数字带两位小数点" class="headerlink" title="6、只输入数字带两位小数点"></a>6、只输入数字带两位小数点</h4><pre><code>const numberOnly = /^[1-9]+([.]{1}[0-9]{0,2}){0,1}$/;numberOnly.test(value);</code></pre><h4 id="6、头像处理"><a href="#6、头像处理" class="headerlink" title="6、头像处理"></a>6、头像处理</h4><pre><code>html:    &lt;input id=&quot;fileBtn&quot; type=&quot;file&quot; onchange=&quot;upload(&apos;#fileBtn&apos;, &apos;#img&apos;);&quot; accept=&quot;image/*&quot; /&gt;    # 解析    # accept 属性（允许上传两种文件类型：gif 和 jpeg）    # capture 捕获到系统默认的设备，有三个参数可设置  camera--照相机； camcorder--摄像机； microphone--录音    # 参数一表示 &quot;选择文件&quot; 的 id，参数二表示 &quot;显示图片&quot; 的 id，js:    var upload = function(c, d){        &quot;use strict&quot;;        var $c = document.querySelector(c),            $d = document.querySelector(d),            file = $c.files[0],            reader = new FileReader();        reader.readAsDataURL(file);        reader.onload = function(e){            $d.setAttribute(&quot;src&quot;, e.target.result);        };    };    # 解析    # 参数在上面 HTML 就已经讲解了，    # file 表示你选中的那个图片，然后它里面有几个属性 name、size、type、slice等，也都非常实用，    # FileReader作为文件API的重要成员用于读取文件，根据W3C的定义，FileReader接口提供了读取文件的方法和包含读取结果的事件模型。    # 调用 FileReader 的 readAsDataURL 接口，将启动异步加载文件内容，通过给 reader 监听一个 onload 事件，    # 将数据加载完毕后，在onload事件处理中，通过 event 的 result 属性即可获得文件内容，然后扔进 img 的 src 即可 打开图片并预览。    reference: https://www.idaima.com/article/12159</code></pre><h4 id="7、将一个数组加入到另外一个数组中："><a href="#7、将一个数组加入到另外一个数组中：" class="headerlink" title="7、将一个数组加入到另外一个数组中："></a>7、将一个数组加入到另外一个数组中：</h4><pre><code>Array.prototype.push.apply(updateNavListData[1].types,techList);</code></pre><h4 id="8、删除对象中值为空或者null的属性："><a href="#8、删除对象中值为空或者null的属性：" class="headerlink" title="8、删除对象中值为空或者null的属性："></a>8、删除对象中值为空或者null的属性：</h4><pre><code>for (var p in params) {        if (!params[p]) {          delete params[p];        }      }</code></pre><h4 id="9、动态给a标签加电话号码："><a href="#9、动态给a标签加电话号码：" class="headerlink" title="9、动态给a标签加电话号码："></a>9、动态给a标签加电话号码：</h4><pre><code>&lt;a href={&quot;tel:&quot; + this.state.orderDetailData.storePhone}  className=&quot;contact-shop&quot;&gt;联系门店&lt;/a&gt;</code></pre><h4 id="10、左右圆角："><a href="#10、左右圆角：" class="headerlink" title="10、左右圆角："></a>10、左右圆角：</h4><pre><code>.br-left {  border-top-left-radius: 20px;  border-bottom-left-radius: 20px;}.br-right {  border-top-right-radius: 20px;  border-bottom-right-radius: 20px;}</code></pre><h4 id="11、根据生日带出星座："><a href="#11、根据生日带出星座：" class="headerlink" title="11、根据生日带出星座："></a>11、根据生日带出星座：</h4><pre><code>// 根据生日的月份和日期，计算星座。function getAstro(month,day){  var s=&quot;魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯&quot;;  var arr=[20,19,21,21,21,22,23,23,23,23,22,22];  return s.substr(month*2-(day&lt;arr[month-1]?2:0),2);}reference: http://m.jb51.net/article/98208.htm</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;img src=&quot;/2017/10/22/good-code-framents/sun.jpg&quot; alt=&quot;A lot need to learn,I&#39;m such stupid&quot; title=&quot;A lot need to learn,I&#39;m such stupid&quot;&gt;
-&lt;h4
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>good-code-framents</title>
     <link href="https://summerangel.github.io/2017/10/22/command-magic/"/>
     <id>https://summerangel.github.io/2017/10/22/command-magic/</id>
     <published>2017-10-22T13:30:12.000Z</published>
@@ -388,6 +366,28 @@
       
         &lt;h4 id=&quot;命令生成圣诞树&quot;&gt;&lt;a href=&quot;#命令生成圣诞树&quot; class=&quot;headerlink&quot; title=&quot;命令生成圣诞树&quot;&gt;&lt;/a&gt;命令生成圣诞树&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;打开终端，确认已安装node，输入  npm xmas
 生成一个头像：npm vis
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>good-code-framents</title>
+    <link href="https://summerangel.github.io/2017/10/22/good-code-framents/"/>
+    <id>https://summerangel.github.io/2017/10/22/good-code-framents/</id>
+    <published>2017-10-22T13:30:12.000Z</published>
+    <updated>2018-04-02T09:24:46.615Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/2017/10/22/good-code-framents/sun.jpg" alt="A lot need to learn,I'm such stupid" title="A lot need to learn,I'm such stupid"><h4 id="1、将一维数组转为二维数组："><a href="#1、将一维数组转为二维数组：" class="headerlink" title="1、将一维数组转为二维数组："></a>1、将一维数组转为二维数组：</h4><pre><code>var arr=[1,2,3,4,5,6,7],ar=[];               while(arr.length)ar.push(arr.splice(0,3));</code></pre><h4 id="2、手机号校验："><a href="#2、手机号校验：" class="headerlink" title="2、手机号校验："></a>2、手机号校验：</h4><pre><code>if ((mobile.length === 0) || !/^0?(13|15|18|14|17)[0-9]{9}$/.test(phone)) {    alert(&apos;请输入正确的手机号码&apos;);    return false;    }</code></pre><h4 id="3、密码长度只能为8-20位"><a href="#3、密码长度只能为8-20位" class="headerlink" title="3、密码长度只能为8~20位:"></a>3、密码长度只能为8~20位:</h4><pre><code>if (!/^[0-9a-zA-Z]{8,20}$/.test(password)) {    alert(&apos;密码长度只能为8~20位&apos;);    return false;}</code></pre><h4 id="4、验证6位验证码："><a href="#4、验证6位验证码：" class="headerlink" title="4、验证6位验证码："></a>4、验证6位验证码：</h4><pre><code>checkPayPassword(val) {    return /^\d{6}$/.test(val)    }</code></pre><h4 id="5、手机每四位空格隔开"><a href="#5、手机每四位空格隔开" class="headerlink" title="5、手机每四位空格隔开"></a>5、手机每四位空格隔开</h4><pre><code>phoneNoSplit (phone) {    let reg = /^(\d{4})(\d{4})(\d{3})$/;    let matches = reg.exec(phone);    return matches[1] + &apos; &apos; + matches[2] + &apos; &apos; + matches[3];  }</code></pre><h4 id="6、只输入数字带两位小数点"><a href="#6、只输入数字带两位小数点" class="headerlink" title="6、只输入数字带两位小数点"></a>6、只输入数字带两位小数点</h4><pre><code>const numberOnly = /^[1-9]+([.]{1}[0-9]{0,2}){0,1}$/;numberOnly.test(value);</code></pre><h4 id="6、头像处理"><a href="#6、头像处理" class="headerlink" title="6、头像处理"></a>6、头像处理</h4><pre><code>html:    &lt;input id=&quot;fileBtn&quot; type=&quot;file&quot; onchange=&quot;upload(&apos;#fileBtn&apos;, &apos;#img&apos;);&quot; accept=&quot;image/*&quot; /&gt;    # 解析    # accept 属性（允许上传两种文件类型：gif 和 jpeg）    # capture 捕获到系统默认的设备，有三个参数可设置  camera--照相机； camcorder--摄像机； microphone--录音    # 参数一表示 &quot;选择文件&quot; 的 id，参数二表示 &quot;显示图片&quot; 的 id，js:    var upload = function(c, d){        &quot;use strict&quot;;        var $c = document.querySelector(c),            $d = document.querySelector(d),            file = $c.files[0],            reader = new FileReader();        reader.readAsDataURL(file);        reader.onload = function(e){            $d.setAttribute(&quot;src&quot;, e.target.result);        };    };    # 解析    # 参数在上面 HTML 就已经讲解了，    # file 表示你选中的那个图片，然后它里面有几个属性 name、size、type、slice等，也都非常实用，    # FileReader作为文件API的重要成员用于读取文件，根据W3C的定义，FileReader接口提供了读取文件的方法和包含读取结果的事件模型。    # 调用 FileReader 的 readAsDataURL 接口，将启动异步加载文件内容，通过给 reader 监听一个 onload 事件，    # 将数据加载完毕后，在onload事件处理中，通过 event 的 result 属性即可获得文件内容，然后扔进 img 的 src 即可 打开图片并预览。    reference: https://www.idaima.com/article/12159</code></pre><h4 id="7、将一个数组加入到另外一个数组中："><a href="#7、将一个数组加入到另外一个数组中：" class="headerlink" title="7、将一个数组加入到另外一个数组中："></a>7、将一个数组加入到另外一个数组中：</h4><pre><code>Array.prototype.push.apply(updateNavListData[1].types,techList);</code></pre><h4 id="8、删除对象中值为空或者null的属性："><a href="#8、删除对象中值为空或者null的属性：" class="headerlink" title="8、删除对象中值为空或者null的属性："></a>8、删除对象中值为空或者null的属性：</h4><pre><code>for (var p in params) {        if (!params[p]) {          delete params[p];        }      }</code></pre><h4 id="9、动态给a标签加电话号码："><a href="#9、动态给a标签加电话号码：" class="headerlink" title="9、动态给a标签加电话号码："></a>9、动态给a标签加电话号码：</h4><pre><code>&lt;a href={&quot;tel:&quot; + this.state.orderDetailData.storePhone}  className=&quot;contact-shop&quot;&gt;联系门店&lt;/a&gt;</code></pre><h4 id="10、左右圆角："><a href="#10、左右圆角：" class="headerlink" title="10、左右圆角："></a>10、左右圆角：</h4><pre><code>.br-left {  border-top-left-radius: 20px;  border-bottom-left-radius: 20px;}.br-right {  border-top-right-radius: 20px;  border-bottom-right-radius: 20px;}</code></pre><h4 id="11、根据生日带出星座："><a href="#11、根据生日带出星座：" class="headerlink" title="11、根据生日带出星座："></a>11、根据生日带出星座：</h4><pre><code>// 根据生日的月份和日期，计算星座。function getAstro(month,day){  var s=&quot;魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯&quot;;  var arr=[20,19,21,21,21,22,23,23,23,23,22,22];  return s.substr(month*2-(day&lt;arr[month-1]?2:0),2);}reference: http://m.jb51.net/article/98208.htm</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;img src=&quot;/2017/10/22/good-code-framents/sun.jpg&quot; alt=&quot;A lot need to learn,I&#39;m such stupid&quot; title=&quot;A lot need to learn,I&#39;m such stupid&quot;&gt;
+&lt;h4
       
     
     </summary>
