@@ -149,6 +149,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-about-deploy" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/25/about-deploy/">How to deploy a website on Mac</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、-Buy-a-CES（购买一台服务器）"><a href="#一、-Buy-a-CES（购买一台服务器）" class="headerlink" title="一、 Buy a CES（购买一台服务器）"></a>一、 Buy a CES（购买一台服务器）</h4><p>  the link is: <a href="https://ecs-buy-cn-huhehaote.aliyun.com/wizard/#/prepay/cn-huhehaote" target="_blank" rel="external">https://ecs-buy-cn-huhehaote.aliyun.com/wizard/#/prepay/cn-huhehaote</a></p>
+<h4 id="二、Connect-to-Server（连接服务器）"><a href="#二、Connect-to-Server（连接服务器）" class="headerlink" title="二、Connect to Server（连接服务器）"></a>二、Connect to Server（连接服务器）</h4><p>  After you bought a CES, you will have access to login the server they give you,link this</p>
+  <img src="/2018/04/25/about-deploy/server_one.jpg" alt="the page you will find your public ip" title="the page you will find your public ip">
+<p>  Open the terminal you usually use, and command following:（打开你常用的终端，输入以下信息）</p>
+<pre><code>ssh root@39.104.121.24(the ip should change to your own public ip 这里的ip应该换成你自己的公网ip)
+
+after executing this,the terminal will let you input the password
+
+then you will connect to the server;
+</code></pre><h4 id="三、Install-Node（安装Node）"><a href="#三、Install-Node（安装Node）" class="headerlink" title="三、Install Node（安装Node）"></a>三、Install Node（安装Node）</h4><p>   1、The download link: <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<p>   we usually choose the source code to install,for it’s better.Click right press and copy the download link;<br>   （我们一般选择source code安装，因为听说更好一点。点击右键复制地址）</p>
+<p>   2、Then we back to the connected server,and to the root directory,and create a empty directory to store all soft we need </p>
+<p>   to install.</p>
+<p>   you can act like this: 1) cd / (this means to the root directory)<br>                          2) mkdir soft (create a directory named soft)</p>
+<p>   3、exectute this in terminal: wget (here is the link you copied in step 1);</p>
+<p>   4、decompression the file in step 3: tar -zxvf (here is compressed file name)</p>
+<p>   5、execute this in terminal: cd (decompressed file name) &amp;&amp; ./configure ;</p>
+<p>   6、execute this in terminal: make &amp;&amp; make install;</p>
+<p>   7、execute this to see if you installed node successfully: node -v or npm -v;</p>
+<p>   8、if you met a problem link:  g++: Command not found, you could execute this to fix: yum install gcc gcc-c++,then repeat<br>      step 7;</p>
+<h4 id="四、Install-nrm-and-pm2"><a href="#四、Install-nrm-and-pm2" class="headerlink" title="四、Install nrm and pm2"></a>四、Install nrm and pm2</h4><p>   1、execute this in terminal: npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>   2、execute this in terminal: npm install -g nrm</p>
+<p>   3、execute this in terminal: npm install -g pm2</p>
+<p>   4、start a pm2 process: pm2 start index.js<br>      restart a pm2 process: pm2 restart id/name;<br>      delete a pm2 process: pm2 delete id/name;<br>      review a pm2 process: pm2 moint;<br>      review all pm2 processes: pm2 list;</p>
+<h4 id="五、Install-Nginx"><a href="#五、Install-Nginx" class="headerlink" title="五、Install Nginx"></a>五、Install Nginx</h4><p>   1、before install nginx, we should install some nginx dependencies;</p>
+<p>   2、execute this in terminal: yum install -y pcre pcre-devel</p>
+<p>   3、execute this in terminal: yum install -y zlib zlib-devel</p>
+<p>   4、execute this in terminal: yum install -y openssl openssl-devel</p>
+<p>   5、go to nginx official website to copy the download link: <a href="https://nginx.org/en/download.html" target="_blank" rel="external">https://nginx.org/en/download.html</a></p>
+<p>   6、execute this in terminal: wget (here is the link copied in step 5)</p>
+<p>   7、execute this in terminal: tar -zxvf (here is the compressed file directory) &amp;&amp; cd (here is the decompressed file directory)</p>
+<p>   9、execute this in terminal: ./configure</p>
+<p>   10、execute this in terminal: make &amp;&amp; make install</p>
+<p>   11、to see where the nginx is: whereis nginx</p>
+<p>   12、to go to sbin directory: cd /usr/local/nginx/sbin</p>
+<p>   13、start nginx: ./nginx</p>
+<pre><code>start nginx: ./nginx
+stop nginx: ./nginx -s stop
+quit nginx: ./nginx -s quit
+reload nginx: ./nginx -s reload
+</code></pre><h4 id="六、Install-Git"><a href="#六、Install-Git" class="headerlink" title="六、Install Git"></a>六、Install Git</h4><p>   1、execute this in terminal: yum install git</p>
+<p>   2、make sure is the git install done: git –version</p>
+<h4 id="七、repo-in-git-connect-to-server"><a href="#七、repo-in-git-connect-to-server" class="headerlink" title="七、repo in git connect to server"></a>七、repo in git connect to server</h4><p>   1、cd soft</p>
+<p>   2、git clone (here is the git repo link)</p>
+<p>   3、cd (the git repo name)</p>
+<p>   4、npm i</p>
+<p>   5、npm start(according to your repo)</p>
+<p>   6、open the browser with the url: <a href="http://39.104.121.24:3000" target="_blank" rel="external">http://39.104.121.24:3000</a> (replace the ip with your own public ip)</p>
+<h4 id="八、Mistake-I-make"><a href="#八、Mistake-I-make" class="headerlink" title="八、Mistake I make"></a>八、Mistake I make</h4><p>   Because I didn’t add port 3000 to the secure group,I can’t open the link with port 3000 :<a href="http://39.104.121.24:3000。" target="_blank" rel="external">http://39.104.121.24:3000。</a></p>
+   <img src="/2018/04/25/about-deploy/server_two.jpeg" alt="the page you add your port to secure group" title="the page you add your port to secure group">
+<p>   and may be this article will solve something: <a href="https://www.jianshu.com/p/9a0f356f89ca" target="_blank" rel="external">https://www.jianshu.com/p/9a0f356f89ca</a></p>
+<h4 id="九、if-you-want-to-know-more-detail-describe"><a href="#九、if-you-want-to-know-more-detail-describe" class="headerlink" title="九、if you want to know more detail describe"></a>九、if you want to know more detail describe</h4><p>  here is the origin website to introduce more: <a href="http://gitbook.cn/books/5a561cfca8b23d387720befc/index.html" target="_blank" rel="external">http://gitbook.cn/books/5a561cfca8b23d387720befc/index.html</a></p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/04/25/about-deploy/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/04/25/about-deploy/" class="archive-article-date">
+  	<time datetime="2018-04-25T10:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">deploy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-create-project-related-git" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1106,87 +1238,9 @@ reference: http://m.jb51.net/article/98208.htm
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/10/22/hello-world/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2017/10/22/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-22T06:46:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 

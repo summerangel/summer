@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-06-15T15:36:20.443Z</updated>
+  <updated>2018-06-27T13:58:41.756Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React Native TextInput cannot transfer to chinese bug</title>
+    <link href="https://summerangel.github.io/2018/06/27/react-native-bug/"/>
+    <id>https://summerangel.github.io/2018/06/27/react-native-bug/</id>
+    <published>2018-06-27T13:25:19.000Z</published>
+    <updated>2018-06-27T13:58:41.756Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、A-big-bug-of-React-Native"><a href="#一、A-big-bug-of-React-Native" class="headerlink" title="一、A big bug of React Native"></a>一、A big bug of React Native</h4><p>  I was use the rn library version 0.55.4,It has the same problem from version 0.55.0 to 0.55.5,after googling for this issue for almost one day,<br>  <a href="https://github.com/facebook/react-native/issues/18403" target="_blank" rel="external">Here are the mainly Gain</a> where the same problem other developer met, and after thinking<br>  for all condition,I took the hack method to solve this problem, neither downversion nor upversion of rn.<br>  Reffer to <a href="https://github.com/facebook/react-native/pull/18456" target="_blank" rel="external">this issue</a>,and above this smart guy’s <a href="https://snack.expo.io/Hkp55vn6G" target="_blank" rel="external">demo</a>,<br>  according to following’s guy, wrapper it to a component.</p><img src="/2018/06/27/react-native-bug/smart_guy.jpg" alt="method" title="method"><h4 id="二、Fix-method-in-my-project"><a href="#二、Fix-method-in-my-project" class="headerlink" title="二、Fix method in my project"></a>二、Fix method in my project</h4><p>1、Create a new file to wrapper the hack text input to a component，first you should import some necessary libraries,like: react-native/react;</p><img src="/2018/06/27/react-native-bug/fix_method.jpg" alt="fix_method" title="fix_method"><p>2、In your TextInput component, import the Platform plugin,and add the following things:</p><img src="/2018/06/27/react-native-bug/fix_method_parent.jpg" alt="fix_method_parent" title="fix_method_parent"><p>3、In your html,according to the _checkIsNeedHack,display related input,normal one or hack one.</p><img src="/2018/06/27/react-native-bug/html_like.jpg" alt="html_like" title="html_like"><h4 id="三、The-trick"><a href="#三、The-trick" class="headerlink" title="三、The trick"></a>三、The trick</h4><p>Here use setTimeout to delay for the display of the props data from parent component.If not, the data from up component will not show in the text input value.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;一、A-big-bug-of-React-Native&quot;&gt;&lt;a href=&quot;#一、A-big-bug-of-React-Native&quot; class=&quot;headerlink&quot; title=&quot;一、A big bug of React Native&quot;&gt;&lt;/a&gt;一、A b
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Awesome Charles</title>
@@ -436,27 +457,6 @@
     
     
       <category term="技术" scheme="https://summerangel.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://summerangel.github.io/2017/10/22/hello-world/"/>
-    <id>https://summerangel.github.io/2017/10/22/hello-world/</id>
-    <published>2017-10-22T06:46:01.000Z</published>
-    <updated>2017-10-22T06:46:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
