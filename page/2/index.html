@@ -149,6 +149,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-try-docker" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/27/try-docker/">Try docker in Mac</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、Install-docker"><a href="#一、Install-docker" class="headerlink" title="一、Install docker"></a>一、Install docker</h4><p>   Go to docker official website to download the docker app: <a href="https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac</a></p>
+<p>   We usually choose the stable one to install;</p>
+<h4 id="二、Test-your-docker"><a href="#二、Test-your-docker" class="headerlink" title="二、Test your docker"></a>二、Test your docker</h4><p>   After you installed your docker, you can test it with the following command:</p>
+<pre><code>docker --version
+docker --info
+docker run hello-world
+</code></pre><h4 id="三、Public-your-git-repo-to-docker"><a href="#三、Public-your-git-repo-to-docker" class="headerlink" title="三、Public your git repo to docker"></a>三、Public your git repo to docker</h4><p>  1、Go to git to copy your git repo link;</p>
+<p>  2、If you want to exclude some files: open your local git repo and create a .dockerignore file in the root directory and put the following info in it;</p>
+<pre><code>.git
+node_modules
+npm-debug.log
+</code></pre><p>  3、Create a Dockerfile file in root directory and also write the following in it:</p>
+<pre><code>FROM node:8.4
+COPY . /app
+WORKDIR /app
+RUN npm install --registry=https://registry.npm.taobao.org
+EXPOSE 3000
+</code></pre><p>  4、After above finished, you can create an image like following command:</p>
+<pre><code>docker image build -t [here is your repo name] .
+
+Or
+
+docker image build -t [repo name]:0.0.1 .
+</code></pre><p>  5、Container Generate:</p>
+<pre><code>docker container run -p 8000:3000 -it [repo name] /bin/bash
+
+Or
+
+docker container run -p 8000:3000 -it [repo name]:0.0.1 /bin/bash
+</code></pre><p>   you can start your project in docker(execute your project start command,eg: node app.js), and then open the link:<a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> in browser,your project is running.</p>
+<p>  6、Ctrl + c: stop node process; Ctrl + d(or input exit): quit the container; also: docker container kill will help;    </p>
+<p>  7、Register a docker Id in <a href="https://hub.docker.com/" target="_blank" rel="external">https://hub.docker.com/</a>;</p>
+<p>  8、After registering open your terminal and execute: docker login (make sure your docker app is open and vpn is closed)</p>
+<p>  9、After login</p>
+<pre><code>docker image tag [imageName] [username]/[repository]:[tag]
+
+#eg: docker image tag summer-album:0.0.1 summaerangel/summer-album:0.0.1
+</code></pre><p>  10、Finally, publish the image</p>
+<pre><code>docker image push [username]/[repository]:[tag]
+</code></pre><p>   then you can see your published image in hub.docker.com</p>
+<h4 id="四、Commands-that-may-used-frequently"><a href="#四、Commands-that-may-used-frequently" class="headerlink" title="四、Commands that may used frequently"></a>四、Commands that may used frequently</h4><pre><code>docker version
+docker info
+docker image ls (list all the image)
+docker image rm [here is your imageName] (delete image file)
+docker image pull [here is imageName] (pull image file from docker)
+
+docker container run [imageName] (run the image in docker)
+docker container kill [containerId] (kill the running image file)
+docker container ls (list the running container)
+docker container ls --all (list all the container, including the killed ones)
+docker container rm [containerId] (delete the container in the docker)
+</code></pre><h4 id="五、More-detail-description"><a href="#五、More-detail-description" class="headerlink" title="五、More detail description"></a>五、More detail description</h4><p>   If this is not understandable, you can step into following links:</p>
+<p>   <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p>
+<p>   And</p>
+<p>   <a href="https://docs.docker.com/docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac</a></p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/04/27/try-docker/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/04/27/try-docker/" class="archive-article-date">
+  	<time datetime="2018-04-27T01:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-about-deploy" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -333,6 +468,17 @@ you can execute this command like this: git pull origin master --allow-unrelated
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -418,6 +564,17 @@ you can execute this command like this: git pull origin master --allow-unrelated
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">svn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -494,7 +651,7 @@ you can execute this command like this: git pull origin master --allow-unrelated
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">technique</a>
         		</li>
       		
 		</ul>
@@ -647,7 +804,7 @@ console.log = function() {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">technique</a>
         		</li>
       		
 		</ul>
@@ -827,6 +984,17 @@ console.log = function() {
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -910,6 +1078,17 @@ console.log = function() {
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1051,6 +1230,17 @@ reference: http://m.jb51.net/article/98208.htm
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1122,90 +1312,12 @@ reference: http://m.jb51.net/article/98208.htm
       </span>
 
       
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-change-to-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/22/change-to-hexo/">change-to-hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p>This is a blog to record some commands to publish the blog based on hexo to avoid forgetting.</p>
-<p>if you want to use hexo too, you could see the doc in hexo’s page,it tells you step by step.<br>the url is<br><a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p>
-<p>The main command:</p>
-<p>firstly,you should have git and node installed,it is fundamentally for developers.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g // the command to install hexo-cli</div><div class="line"></div><div class="line">hexo init (folder&apos;s name) //init a hexo folder</div><div class="line"></div><div class="line">cd (folder&apos;s name) //to the folder&apos;s root path</div><div class="line"></div><div class="line">git init //at the folder&apos;s root path execute the command</div><div class="line"></div><div class="line">hexo server  //run the project (the url to open it is http://localhost:4000)</div></pre></td></tr></table></figure>
-<p>below are the commands you will used frequently:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo new page (folder&apos;s name) // this command creates a new folder, usually under the source folder</div><div class="line"></div><div class="line">hexo new [layout] (folder&apos;s name) //this command creates a new post which you can edit you blog</div></pre></td></tr></table></figure>
-<p>finally, the deploy commands:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/10/22/change-to-hexo/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2017/10/22/change-to-hexo/" class="archive-article-date">
-  	<time datetime="2017-10-22T08:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">trick</a>
         		</li>
       		
 		</ul>
@@ -1333,7 +1445,7 @@ reference: http://m.jb51.net/article/98208.htm
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">technique</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1341,11 +1453,35 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">trick</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1354,6 +1490,10 @@ reference: http://m.jb51.net/article/98208.htm
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">mini-programme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bugs</a>
               </li>
              
               <li class="article-tag-list-item">

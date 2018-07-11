@@ -149,6 +149,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-react-native-conclusion" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/11/react-native-conclusion/">The project of react-native come to an end</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Say-goodbye-to-react-native-project-temporarily"><a href="#Say-goodbye-to-react-native-project-temporarily" class="headerlink" title="Say goodbye to react-native project temporarily"></a>Say goodbye to react-native project temporarily</h4><p>  So busy these days that I don’t have time to update my blog and learning,sad.<br>  After struggling in the react-native for several months, solved the environment for developing and have an knowledge of the grammar of react-native,feel so released, and not that afraid of react-native.</p>
+<h4 id="Some-issue-met-record"><a href="#Some-issue-met-record" class="headerlink" title="Some issue met record"></a>Some issue met record</h4><p>   1、Using picture as background image to implement the shadow in order to cross platform which takes effect in both ios and android.</p>
+<p>   The shadow realised by css in react-native is not like the way in web css.<br>   In normal web css you can realise it by the attribute like the writing of: box-shadow: 10px 10px 5px #000;(just an example);<br>   But in react-native,you should write it like this:</p>
+<p>   1) shadowColor color string (shadow color)<br>   2) shadowOffset {width: number,height: number} (shadow offset)<br>   3) shadowOpacity number (shadow opacity)<br>   4) shadowRadius number (shadow radius)</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;</div><div class="line">   width: 100,</div><div class="line">   height: 100,</div><div class="line">   backgroundColor: &apos;red&apos;,</div><div class="line">   shadowColor: &apos;green&apos;,</div><div class="line">   shadowRadius: 10,</div><div class="line">   shadowOpacity: 0.5,</div><div class="line">   shadowOffset: &#123;width: 20,height: 20&#125;</div><div class="line">&#125;&#125;&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p>   Due to this is only taking effect in ios,so here I use the shadow picture as the background Image to implement the effect.</p>
+<p>   2、Date format can not be transferred as expected</p>
+<p>   Actually I met this issue years ago,which only the format of 2018/7/11 can be correctly transferred in ios,we should use slash to split the number.<br>   If not slash, use comma or dot or transverse line will get null.</p>
+<p>   3、Error watching file for changes: EMFILE</p>
+<p>   Fix: just install watchman: brew install watchman</p>
+<p>   4、npm ERR! Failed at the uglifyjs-webpack-plugin@0.4.6 postinstall script.</p>
+<p>   Met this when deploy the project into the server, execute the command: npm install<br>   Fix: you can use yarn or update the npm.(Experience said: when met some unexplainable issue excuting npm install, you can upgrade or down version of npm.</p>
+<p>   5、iOS: UI will be blocked when show Alert while closing Modal</p>
+<p>   Fix: <a href="https://github.com/facebook/react-native/issues/10471" target="_blank" rel="external">Reffer to this link</a></p>
+<h4 id="Bundle-ios"><a href="#Bundle-ios" class="headerlink" title="Bundle ios"></a>Bundle ios</h4><p>  1、Run ios: react-native run-ios;<br>  2、Bundle ios: react-native bundle –entry-file index.js –platform ios –dev true –bundle-out ./ios/bundle/index.jsbundle –assets-dest ./ios/bundle</p>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>  The project is just finished like this, feel a little lost, thought the process to learn react-native is hard but still happy and satisfied.</p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/07/11/react-native-conclusion/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/07/11/react-native-conclusion/" class="archive-article-date">
+  	<time datetime="2018-07-11T13:09:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-11</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-react-native-bug" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -200,6 +296,17 @@
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -276,6 +383,17 @@
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">software</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -715,6 +833,17 @@ brew install pkg-config cairo libpng jpeg giflib
       </span>
 
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bugs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -901,136 +1030,12 @@ brew install pkg-config cairo libpng jpeg giflib
       </span>
 
       
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="[layout]-try-docker" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/27/try-docker/">Try docker in Mac</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、Install-docker"><a href="#一、Install-docker" class="headerlink" title="一、Install docker"></a>一、Install docker</h4><p>   Go to docker official website to download the docker app: <a href="https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac</a></p>
-<p>   We usually choose the stable one to install;</p>
-<h4 id="二、Test-your-docker"><a href="#二、Test-your-docker" class="headerlink" title="二、Test your docker"></a>二、Test your docker</h4><p>   After you installed your docker, you can test it with the following command:</p>
-<pre><code>docker --version
-docker --info
-docker run hello-world
-</code></pre><h4 id="三、Public-your-git-repo-to-docker"><a href="#三、Public-your-git-repo-to-docker" class="headerlink" title="三、Public your git repo to docker"></a>三、Public your git repo to docker</h4><p>  1、Go to git to copy your git repo link;</p>
-<p>  2、If you want to exclude some files: open your local git repo and create a .dockerignore file in the root directory and put the following info in it;</p>
-<pre><code>.git
-node_modules
-npm-debug.log
-</code></pre><p>  3、Create a Dockerfile file in root directory and also write the following in it:</p>
-<pre><code>FROM node:8.4
-COPY . /app
-WORKDIR /app
-RUN npm install --registry=https://registry.npm.taobao.org
-EXPOSE 3000
-</code></pre><p>  4、After above finished, you can create an image like following command:</p>
-<pre><code>docker image build -t [here is your repo name] .
-
-Or
-
-docker image build -t [repo name]:0.0.1 .
-</code></pre><p>  5、Container Generate:</p>
-<pre><code>docker container run -p 8000:3000 -it [repo name] /bin/bash
-
-Or
-
-docker container run -p 8000:3000 -it [repo name]:0.0.1 /bin/bash
-</code></pre><p>   you can start your project in docker(execute your project start command,eg: node app.js), and then open the link:<a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> in browser,your project is running.</p>
-<p>  6、Ctrl + c: stop node process; Ctrl + d(or input exit): quit the container; also: docker container kill will help;    </p>
-<p>  7、Register a docker Id in <a href="https://hub.docker.com/" target="_blank" rel="external">https://hub.docker.com/</a>;</p>
-<p>  8、After registering open your terminal and execute: docker login (make sure your docker app is open and vpn is closed)</p>
-<p>  9、After login</p>
-<pre><code>docker image tag [imageName] [username]/[repository]:[tag]
-
-#eg: docker image tag summer-album:0.0.1 summaerangel/summer-album:0.0.1
-</code></pre><p>  10、Finally, publish the image</p>
-<pre><code>docker image push [username]/[repository]:[tag]
-</code></pre><p>   then you can see your published image in hub.docker.com</p>
-<h4 id="四、Commands-that-may-used-frequently"><a href="#四、Commands-that-may-used-frequently" class="headerlink" title="四、Commands that may used frequently"></a>四、Commands that may used frequently</h4><pre><code>docker version
-docker info
-docker image ls (list all the image)
-docker image rm [here is your imageName] (delete image file)
-docker image pull [here is imageName] (pull image file from docker)
-
-docker container run [imageName] (run the image in docker)
-docker container kill [containerId] (kill the running image file)
-docker container ls (list the running container)
-docker container ls --all (list all the container, including the killed ones)
-docker container rm [containerId] (delete the container in the docker)
-</code></pre><h4 id="五、More-detail-description"><a href="#五、More-detail-description" class="headerlink" title="五、More detail description"></a>五、More detail description</h4><p>   If this is not understandable, you can step into following links:</p>
-<p>   <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p>
-<p>   And</p>
-<p>   <a href="https://docs.docker.com/docker-for-mac" target="_blank" rel="external">https://docs.docker.com/docker-for-mac</a></p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2018/04/27/try-docker/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/04/27/try-docker/" class="archive-article-date">
-  	<time datetime="2018-04-27T01:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">software</a>
         		</li>
       		
 		</ul>
@@ -1158,7 +1163,7 @@ docker container rm [containerId] (delete the container in the docker)
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">technique</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1166,11 +1171,35 @@ docker container rm [containerId] (delete the container in the docker)
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">trick</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1179,6 +1208,10 @@ docker container rm [containerId] (delete the container in the docker)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">mini-programme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bugs</a>
               </li>
              
               <li class="article-tag-list-item">

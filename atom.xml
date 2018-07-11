@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-06-27T13:58:41.756Z</updated>
+  <updated>2018-07-11T14:55:54.606Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>The project of react-native come to an end</title>
+    <link href="https://summerangel.github.io/2018/07/11/react-native-conclusion/"/>
+    <id>https://summerangel.github.io/2018/07/11/react-native-conclusion/</id>
+    <published>2018-07-11T13:09:11.000Z</published>
+    <updated>2018-07-11T14:55:54.606Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Say-goodbye-to-react-native-project-temporarily"><a href="#Say-goodbye-to-react-native-project-temporarily" class="headerlink" title="Say goodbye to react-native project temporarily"></a>Say goodbye to react-native project temporarily</h4><p>  So busy these days that I don’t have time to update my blog and learning,sad.<br>  After struggling in the react-native for several months, solved the environment for developing and have an knowledge of the grammar of react-native,feel so released, and not that afraid of react-native.</p><h4 id="Some-issue-met-record"><a href="#Some-issue-met-record" class="headerlink" title="Some issue met record"></a>Some issue met record</h4><p>   1、Using picture as background image to implement the shadow in order to cross platform which takes effect in both ios and android.</p><p>   The shadow realised by css in react-native is not like the way in web css.<br>   In normal web css you can realise it by the attribute like the writing of: box-shadow: 10px 10px 5px #000;(just an example);<br>   But in react-native,you should write it like this:</p><p>   1) shadowColor color string (shadow color)<br>   2) shadowOffset {width: number,height: number} (shadow offset)<br>   3) shadowOpacity number (shadow opacity)<br>   4) shadowRadius number (shadow radius)</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;</div><div class="line">   width: 100,</div><div class="line">   height: 100,</div><div class="line">   backgroundColor: &apos;red&apos;,</div><div class="line">   shadowColor: &apos;green&apos;,</div><div class="line">   shadowRadius: 10,</div><div class="line">   shadowOpacity: 0.5,</div><div class="line">   shadowOffset: &#123;width: 20,height: 20&#125;</div><div class="line">&#125;&#125;&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure><p>   Due to this is only taking effect in ios,so here I use the shadow picture as the background Image to implement the effect.</p><p>   2、Date format can not be transferred as expected</p><p>   Actually I met this issue years ago,which only the format of 2018/7/11 can be correctly transferred in ios,we should use slash to split the number.<br>   If not slash, use comma or dot or transverse line will get null.</p><p>   3、Error watching file for changes: EMFILE</p><p>   Fix: just install watchman: brew install watchman</p><p>   4、npm ERR! Failed at the uglifyjs-webpack-plugin@0.4.6 postinstall script.</p><p>   Met this when deploy the project into the server, execute the command: npm install<br>   Fix: you can use yarn or update the npm.(Experience said: when met some unexplainable issue excuting npm install, you can upgrade or down version of npm.</p><p>   5、iOS: UI will be blocked when show Alert while closing Modal</p><p>   Fix: <a href="https://github.com/facebook/react-native/issues/10471" target="_blank" rel="external">Reffer to this link</a></p><h4 id="Bundle-ios"><a href="#Bundle-ios" class="headerlink" title="Bundle ios"></a>Bundle ios</h4><p>  1、Run ios: react-native run-ios;<br>  2、Bundle ios: react-native bundle –entry-file index.js –platform ios –dev true –bundle-out ./ios/bundle/index.jsbundle –assets-dest ./ios/bundle</p><h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>  The project is just finished like this, feel a little lost, thought the process to learn react-native is hard but still happy and satisfied.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Say-goodbye-to-react-native-project-temporarily&quot;&gt;&lt;a href=&quot;#Say-goodbye-to-react-native-project-temporarily&quot; class=&quot;headerlink&quot; title
+      
+    
+    </summary>
+    
+    
+      <category term="react-native" scheme="https://summerangel.github.io/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React Native TextInput cannot transfer to chinese bug</title>
     <link href="https://summerangel.github.io/2018/06/27/react-native-bug/"/>
     <id>https://summerangel.github.io/2018/06/27/react-native-bug/</id>
     <published>2018-06-27T13:25:19.000Z</published>
-    <updated>2018-06-27T13:58:41.756Z</updated>
+    <updated>2018-07-11T14:57:08.266Z</updated>
     
     <content type="html"><![CDATA[<h4 id="一、A-big-bug-of-React-Native"><a href="#一、A-big-bug-of-React-Native" class="headerlink" title="一、A big bug of React Native"></a>一、A big bug of React Native</h4><p>  I was use the rn library version 0.55.4,It has the same problem from version 0.55.0 to 0.55.5,after googling for this issue for almost one day,<br>  <a href="https://github.com/facebook/react-native/issues/18403" target="_blank" rel="external">Here are the mainly Gain</a> where the same problem other developer met, and after thinking<br>  for all condition,I took the hack method to solve this problem, neither downversion nor upversion of rn.<br>  Reffer to <a href="https://github.com/facebook/react-native/pull/18456" target="_blank" rel="external">this issue</a>,and above this smart guy’s <a href="https://snack.expo.io/Hkp55vn6G" target="_blank" rel="external">demo</a>,<br>  according to following’s guy, wrapper it to a component.</p><img src="/2018/06/27/react-native-bug/smart_guy.jpg" alt="method" title="method"><h4 id="二、Fix-method-in-my-project"><a href="#二、Fix-method-in-my-project" class="headerlink" title="二、Fix method in my project"></a>二、Fix method in my project</h4><p>1、Create a new file to wrapper the hack text input to a component，first you should import some necessary libraries,like: react-native/react;</p><img src="/2018/06/27/react-native-bug/fix_method.jpg" alt="fix_method" title="fix_method"><p>2、In your TextInput component, import the Platform plugin,and add the following things:</p><img src="/2018/06/27/react-native-bug/fix_method_parent.jpg" alt="fix_method_parent" title="fix_method_parent"><p>3、In your html,according to the _checkIsNeedHack,display related input,normal one or hack one.</p><img src="/2018/06/27/react-native-bug/html_like.jpg" alt="html_like" title="html_like"><h4 id="三、The-trick"><a href="#三、The-trick" class="headerlink" title="三、The trick"></a>三、The trick</h4><p>Here use setTimeout to delay for the display of the props data from parent component.If not, the data from up component will not show in the text input value.</p>]]></content>
     
@@ -35,6 +58,8 @@
     </summary>
     
     
+      <category term="react-native" scheme="https://summerangel.github.io/tags/react-native/"/>
+    
   </entry>
   
   <entry>
@@ -42,7 +67,7 @@
     <link href="https://summerangel.github.io/2018/06/14/charles-thing/"/>
     <id>https://summerangel.github.io/2018/06/14/charles-thing/</id>
     <published>2018-06-14T14:33:37.000Z</published>
-    <updated>2018-06-15T15:36:20.443Z</updated>
+    <updated>2018-07-11T15:00:34.331Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Modify-request"><a href="#Modify-request" class="headerlink" title="Modify request"></a>Modify request</h4><p>Today I get another function about Charles,which heard of my colleague.Actually I installed Charles before,but I only used it to fetch request from app,for it can’t be opened in browser,we can modify the request params and also the response,steps are:</p><p>  1、Find the url you want to modify;<br>  2、Then right click it, select the option Breakpoint;<br>  3、Then repeat the url(you can use quick key to execute this: shift + command + R);<br>  4、Then the process will open another window to the breakpoint you set;<br>  5、At this time, you can click the tab Edit request or Edit the response option;<br>  6、After modified, click the button execute to continue;<br>  7、Finally the modified url completed, the process is done.</p><p>  Following give some screenshots to express this:<br>  <img src="/2018/06/14/charles-thing/screen_one.jpg" alt="step one" title="step one"><br>  <img src="/2018/06/14/charles-thing/screen_two.jpg" alt="step two" title="step two"><br>  <img src="/2018/06/14/charles-thing/screen_three.jpg" alt="step three" title="step three"></p><h4 id="Map-Local-get-mock-data-from-local-file"><a href="#Map-Local-get-mock-data-from-local-file" class="headerlink" title="Map Local(get mock data from local file)"></a>Map Local(get mock data from local file)</h4><p>Select Tool –&gt; Map local: this allow you to get mock data from your own computer which you discussed with back-end developer when the back-end developer isn’t ready to provide the real data.</p><h4 id="Change-the-speed-of-network"><a href="#Change-the-speed-of-network" class="headerlink" title="Change the speed of network"></a>Change the speed of network</h4><p>You can lower the speed of network for some extreme condition.</p><h4 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h4><p>The three of above is constantly be used by our front-end developer,and is extremely useful,saving a lot of time to communicate with back-end developer.</p><h4 id="Plus"><a href="#Plus" class="headerlink" title="Plus"></a>Plus</h4><p>If we want to modify some request in one page,we should keep in mind that whether the request is called in that page,if not, we should better make breakpoint in domain.<br>give a screenshot to express this,refer to <a href="https://cloud.tencent.com/developer/article/1147452" target="_blank" rel="external">this article</a>:<br> <img src="/2018/06/14/charles-thing/screenshot_four.png" alt="step four" title="step four"></p>]]></content>
     
@@ -55,6 +80,8 @@
     
     </summary>
     
+    
+      <category term="software" scheme="https://summerangel.github.io/tags/software/"/>
     
   </entry>
   
@@ -155,7 +182,7 @@
     <link href="https://summerangel.github.io/2018/05/15/problem-records/"/>
     <id>https://summerangel.github.io/2018/05/15/problem-records/</id>
     <published>2018-05-15T06:48:43.000Z</published>
-    <updated>2018-05-15T06:53:53.436Z</updated>
+    <updated>2018-07-11T15:00:34.319Z</updated>
     
     <content type="html"><![CDATA[<h4 id="error-in-console-gyp-Call-to-‘-util-has-lib-sh-freetype’-returned-exit-status-0-while-in-binding-gyp-while-trying-to-load-binding-gyp"><a href="#error-in-console-gyp-Call-to-‘-util-has-lib-sh-freetype’-returned-exit-status-0-while-in-binding-gyp-while-trying-to-load-binding-gyp" class="headerlink" title="error in console: gyp: Call to ‘./util/has_lib.sh freetype’ returned exit status 0 while in binding.gyp. while trying to load binding.gyp"></a>error in console: gyp: Call to ‘./util/has_lib.sh freetype’ returned exit status 0 while in binding.gyp. while trying to load binding.gyp</h4><p>solve method: </p><pre><code>npm install -g node-gypbrew install pkg-config cairo libpng jpeg giflib</code></pre><h4 id="error-in-console-BOZZMOB-M-T0HZ-rest-bozzmob-node-helloz-js"><a href="#error-in-console-BOZZMOB-M-T0HZ-rest-bozzmob-node-helloz-js" class="headerlink" title="error in console: BOZZMOB-M-T0HZ:rest bozzmob$ node helloz.js"></a>error in console: BOZZMOB-M-T0HZ:rest bozzmob$ node helloz.js</h4><p>/Users/bozzmob/Documents/work/nextgennms/rest/helloz.js:1<br>(function (exports, require, module, <strong>filename, </strong>dirname) { (async function testingAsyncAwait() {<br>                                                                     ^^^^^^^^<br>SyntaxError: Unexpected token function<br>    at Object.exports.runInThisContext (vm.js:53:16)<br>    at Module._compile (module.js:513:28)<br>    at Object.Module._extensions..js (module.js:550:10)<br>    at Module.load (module.js:458:32)<br>    at tryModuleLoad (module.js:417:12)<br>    at Function.Module._load (module.js:409:3)<br>    at Function.Module.runMain (module.js:575:10)<br>    at startup (node.js:160:18)<br>    at node.js:456:3</p><p> Solve method:  check your node version   node -v (here used es7’s property async)</p><h4 id="安装redis修改权限："><a href="#安装redis修改权限：" class="headerlink" title="安装redis修改权限："></a>安装redis修改权限：</h4><pre><code>Attempted to create a lock file on a read-only directory: /data/db, terminating</code></pre><p>   sudo chown -R $USER /data/db</p>]]></content>
     
@@ -168,6 +195,8 @@
     
     </summary>
     
+    
+      <category term="bugs" scheme="https://summerangel.github.io/tags/bugs/"/>
     
   </entry>
   
@@ -199,7 +228,7 @@
     <link href="https://summerangel.github.io/2018/05/03/about-transfer/"/>
     <id>https://summerangel.github.io/2018/05/03/about-transfer/</id>
     <published>2018-05-03T02:41:59.000Z</published>
-    <updated>2018-05-03T06:30:26.543Z</updated>
+    <updated>2018-07-11T15:00:34.343Z</updated>
     
     <content type="html"><![CDATA[<h4 id="一、Key-tool-is-AirDrop"><a href="#一、Key-tool-is-AirDrop" class="headerlink" title="一、Key tool is AirDrop"></a>一、Key tool is AirDrop</h4><p>   Ok, the key tool of this method is using AirDrop, hahaha…</p><h4 id="二、Transfer-files-from-iphone-to-Mac"><a href="#二、Transfer-files-from-iphone-to-Mac" class="headerlink" title="二、Transfer files from iphone to Mac"></a>二、Transfer files from iphone to Mac</h4><pre><code>1、Open Finder and click AirDrop on the left, at the bottom of the right area, there shows    &apos;Allow me to be discovered by: &apos;, choose the one says &apos;Everyone&apos;, like the following:</code></pre>   <img src="/2018/05/03/about-transfer/air_drop_one.jpg" alt="open AirDrop" title="open AirDrop"><p>   Open AirDrop</p><pre><code>2、Go to the place where you want to send files to Mac, for example: you want to send some    photos to Mac, following are steps:</code></pre>   <img src="/2018/05/03/about-transfer/phone_air_drop_four.jpeg" alt="click the red circle button" title="click the red circle button"><p>   Click the red circle area button</p>   <img src="/2018/05/03/about-transfer/phone_air_drop_five.jpeg" alt="find the Mac you want to send to" title="find the Mac you want to send to"><p>   Find the Mac you want to send to, and then tap it.</p><h4 id="三、Transfer-files-from-Mac-to-iphone"><a href="#三、Transfer-files-from-Mac-to-iphone" class="headerlink" title="三、Transfer files from Mac to iphone"></a>三、Transfer files from Mac to iphone</h4><pre><code>1、Pick up your iphone, open setting --&gt; General --&gt; AirDrop, select Everyone;</code></pre>   <img src="/2018/05/03/about-transfer/phone_air_drop_one.jpeg" alt="find the setting and open it" title="find the setting and open it"><p>   Find the setting and open it</p>   <img src="/2018/05/03/about-transfer/phone_air_drop_two.jpeg" alt="find the General and click it" title="find the General and click it"><p>   Find the General and click it</p>   <img src="/2018/05/03/about-transfer/phone_air_drop_three.jpeg" alt="select the Everyone and that's it" title="select the Everyone and that's it"><p>   Select the Everyone and that’s it</p><pre><code>2、Back to your Mac, open Finder and click AirDrop, find the iphone you want to send files to</code></pre>   <img src="/2018/05/03/about-transfer/air_drop_one.jpg" alt="open AirDrop" title="open AirDrop"><p>   Ok, an technologyless article is done, hahaha……………..</p>]]></content>
     
@@ -212,6 +241,8 @@
     
     </summary>
     
+    
+      <category term="software" scheme="https://summerangel.github.io/tags/software/"/>
     
   </entry>
   
@@ -266,7 +297,7 @@
     <link href="https://summerangel.github.io/2018/04/23/create-project-related-git/"/>
     <id>https://summerangel.github.io/2018/04/23/create-project-related-git/</id>
     <published>2018-04-23T10:16:13.000Z</published>
-    <updated>2018-04-23T10:40:24.604Z</updated>
+    <updated>2018-07-11T15:00:34.323Z</updated>
     
     <content type="html"><![CDATA[<h4 id="avoid-forgetting-every-time-forgot-how-to-do"><a href="#avoid-forgetting-every-time-forgot-how-to-do" class="headerlink" title="avoid forgetting(every time forgot how to do)"></a>avoid forgetting(every time forgot how to do)</h4><p>1、 Step One: create a repo on github first, then copy the https’s url;</p><p>2、 Step Two: under your local project folder’s root path execute: git init;</p><p>3、 Step Three: then execute: git add .</p><p>4、 Step Four: then execute: git commit -m “here is some comment about what will be committed”;</p><p>5、 Step Five: then execute: git remote add origin (here is the url copied in step one);</p><p>6、 Step Six: then execute: git pull origin master</p><pre><code>if you confront this problem: fatal: refusing to merge unrelated histories.you can execute this command like this: git pull origin master --allow-unrelated-histories</code></pre><p>7、 Step Seven: then execute: git push -u origin master</p>]]></content>
     
@@ -280,6 +311,8 @@
     </summary>
     
     
+      <category term="git" scheme="https://summerangel.github.io/tags/git/"/>
+    
   </entry>
   
   <entry>
@@ -287,7 +320,7 @@
     <link href="https://summerangel.github.io/2018/01/25/about-svn/"/>
     <id>https://summerangel.github.io/2018/01/25/about-svn/</id>
     <published>2018-01-25T13:30:12.000Z</published>
-    <updated>2018-01-25T09:42:40.830Z</updated>
+    <updated>2018-07-11T15:00:34.327Z</updated>
     
     <content type="html"><![CDATA[<p>open ~/.npmrc</p><h4 id="just-simple-use-about-svn"><a href="#just-simple-use-about-svn" class="headerlink" title="just simple use about svn"></a>just simple use about svn</h4><pre><code>1、从线上地址拷贝代码到本地：svn checkout (线上地址);2、更新本地的svn中的代码：svn up;3、更改npm的源：打开.npmrc文件：open ~/.npmrc；4、查看文件：cat package.json把下列代码复制进.npmrc文件中： sass_binary_site=https://npm.taobao.org/mirrors/node-sass/ phantomjs_cdnurl=http://cnpmjs.org/downloads electron_mirror=https://npm.taobao.org/mirrors/electron/ python_mirror=https://npm.taobao.org/mirrors/python</code></pre><p>  以上，安装依赖时会快很多。</p>]]></content>
     
@@ -302,6 +335,8 @@
     </summary>
     
     
+      <category term="svn" scheme="https://summerangel.github.io/tags/svn/"/>
+    
   </entry>
   
   <entry>
@@ -309,7 +344,7 @@
     <link href="https://summerangel.github.io/2017/11/10/about-plugin-use/"/>
     <id>https://summerangel.github.io/2017/11/10/about-plugin-use/</id>
     <published>2017-11-10T13:38:09.000Z</published>
-    <updated>2017-12-27T07:27:32.000Z</updated>
+    <updated>2018-07-11T15:00:34.308Z</updated>
     
     <content type="html"><![CDATA[<h4 id="使用Swiper"><a href="#使用Swiper" class="headerlink" title="使用Swiper:"></a>使用Swiper:</h4><pre><code>当多个滑动时，尤其是显示其中一个隐藏其他的时候，可能会样式错乱，这个时候要在显示后初始化（注意好时机），还不行时使用destory(true, true)；</code></pre>]]></content>
     
@@ -323,7 +358,7 @@
     </summary>
     
     
-      <category term="技术" scheme="https://summerangel.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="technique" scheme="https://summerangel.github.io/tags/technique/"/>
     
   </entry>
   
@@ -332,7 +367,7 @@
     <link href="https://summerangel.github.io/2017/10/22/about-css/"/>
     <id>https://summerangel.github.io/2017/10/22/about-css/</id>
     <published>2017-10-22T13:38:09.000Z</published>
-    <updated>2017-12-27T07:26:01.000Z</updated>
+    <updated>2018-07-11T15:00:34.346Z</updated>
     
     <content type="html"><![CDATA[<h4 id="单行显示省略号："><a href="#单行显示省略号：" class="headerlink" title="单行显示省略号："></a>单行显示省略号：</h4><pre><code> overflow: hidden; text-overflow: ellipsis; white-space: nowrap;多行显示省略号： display: -webkit-box; -webkit-line-clamp: 2; （多少行的时候显示） -webkit-box-orient: vertical; overflow: hidden;三角箭头：.left_arrow {      position: relative;      .arrow_left {        margin: 5px auto;        width: 0;        height: 0;        position: absolute;        left: -11px;        top: -7px;        .triangle_top {          border-left: 12px solid transparent;          border-right: 0px solid transparent;          border-bottom: 27px solid #FAD961;        }        .triangle_bottom {          border-left: 12px solid transparent;          border-right: 0 solid transparent;          border-top: 27px solid #FAD961;        }      }      .count_down {        padding: 6px 14px 7px 15px;        height: 51px;        background: linear-gradient(90deg, #FAD961 0%, #FF8E4E 100%);      }    }</code></pre><h4 id="在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><a href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）" class="headerlink" title="在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）"></a>在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</h4><h4 id="垂直居中-https-segmentfault-com-a-1190000000468431"><a href="#垂直居中-https-segmentfault-com-a-1190000000468431" class="headerlink" title="垂直居中 (https://segmentfault.com/a/1190000000468431)"></a>垂直居中 (<a href="https://segmentfault.com/a/1190000000468431" target="_blank" rel="external">https://segmentfault.com/a/1190000000468431</a>)</h4><pre><code>.center-vertical {  position: relative;  top: 50%;  transform: transformY(-50%);}或.center-vertical {   position: relative;   left: 50%;   transform: transformX(-50%);}</code></pre><h4 id="多重边框"><a href="#多重边框" class="headerlink" title="多重边框"></a>多重边框</h4><pre><code>div {    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);    height: 200px;    margin: 50px auto;    width: 400px}</code></pre><h4 id="浮点数转成整型：-0和-或"><a href="#浮点数转成整型：-0和-或" class="headerlink" title="浮点数转成整型：|0和~~或+"></a>浮点数转成整型：|0和~~或+</h4><pre><code>eg: var foo = (12.4 / 4.13) | 0;//结果为3    var bar = ~~(12.4 / 4.13);//结果为3</code></pre><h4 id="关于console"><a href="#关于console" class="headerlink" title="关于console"></a>关于console</h4><pre><code>var _log = console.log;console.log = function() {  _log.call(console, &apos;%c&apos; + [].slice.call(arguments).join(&apos; &apos;), &apos;color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);&apos;);};</code></pre><h4 id="半圆角："><a href="#半圆角：" class="headerlink" title="半圆角："></a>半圆角：</h4><pre><code>.left_circle {        left: -2px;        border: 1px solid #D6D6D6;        border-radius: 0 100% 100% 0/50%;        border-left: none;      }      .right_circle {        border: 1px solid #D6D6D6;        border-radius: 100% 0 0 100%/50%;        border-right: none;        right: -2px;      }</code></pre>]]></content>
     
@@ -347,7 +382,7 @@
     </summary>
     
     
-      <category term="技术" scheme="https://summerangel.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="technique" scheme="https://summerangel.github.io/tags/technique/"/>
     
   </entry>
   
@@ -356,7 +391,7 @@
     <link href="https://summerangel.github.io/2017/10/22/about-javascript/"/>
     <id>https://summerangel.github.io/2017/10/22/about-javascript/</id>
     <published>2017-10-22T13:37:34.000Z</published>
-    <updated>2018-01-25T06:18:13.895Z</updated>
+    <updated>2018-07-11T15:00:34.334Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names"><a href="#1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names" class="headerlink" title="1、1) Use computed property names when creating objects with dynamic property names."></a>1、1) Use computed property names when creating objects with dynamic property names.</h4><pre><code> eg: function getKey(k) {       return `a key named ${k}`;     }     const obj = {       id: 5,       name: &apos;San Francisco&apos;,       [getKey(&apos;enabled&apos;)]: true,     };2) Use array spreads ... to copy arrays.   eg: const len = items.length;       const itemsCopy = [];       const itemsCopy = [...items];3) To convert an array-like object to an array, use Array.from.   eg: const foo = document.querySelectorAll(&apos;.foo&apos;);       const nodes = Array.from(foo);4) Brilliant Array.prototype.reduce()   eg: // friends - an array of objects       // where object field &quot;books&quot; - list of favorite books       var friends = [{         name: &apos;Anna&apos;,         books: [&apos;Bible&apos;, &apos;Harry Potter&apos;],         age: 21       }, {         name: &apos;Bob&apos;,         books: [&apos;War and peace&apos;, &apos;Romeo and Juliet&apos;],         age: 26       }, {         name: &apos;Alice&apos;,         books: [&apos;The Lord of the Rings&apos;, &apos;The Shining&apos;],         age: 18       }];       // allbooks - list which will contain all friends&apos; books +       // additional list contained in initialValue       var allbooks = friends.reduce(function(prev, curr) {         return [...prev, ...curr.books];       }, [&apos;Alphabet&apos;]);       // allbooks = [       //   &apos;Alphabet&apos;, &apos;Bible&apos;, &apos;Harry Potter&apos;, &apos;War and peace&apos;,       //   &apos;Romeo and Juliet&apos;, &apos;The Lord of the Rings&apos;,       //   &apos;The Shining&apos;       // ]5) Use object destructuring when accessing and using multiple properties of an object. jscs:   eg: // good       function getFullName(user) {         const { firstName, lastName } = user;         return `${firstName} ${lastName}`;       }       // best       function getFullName({ firstName, lastName }) {         return `${firstName} ${lastName}`;       }6) Never use arguments, opt to use rest syntax ... instead   eg: // bad       function concatenateAll() {         const args = Array.prototype.slice.call(arguments);         return args.join(&apos;&apos;);       }       // good       function concatenateAll(...args) {         return args.join(&apos;&apos;);       }7) Never mutate parameters   eg: // bad       function f1(obj) {         obj.key = 1;       };       // good       function f2(obj) {         const key = Object.prototype.hasOwnProperty.call(obj, &apos;key&apos;) ? obj.key : 1;       };</code></pre><h4 id="Check-is-weixin-or-is-alipay"><a href="#Check-is-weixin-or-is-alipay" class="headerlink" title="Check is weixin or is alipay:"></a>Check is weixin or is alipay:</h4><pre><code>function IsWeixinOrAlipay(){    var ua = window.navigator.userAgent.toLowerCase();    //判断是不是微信    if (ua.indexOf(&apos;micromessenger&apos;) &gt;= 0) {        return &quot;WeiXIN&quot;;    }    //判断是不是支付宝    if (ua.indexOf(&apos;alipayclient&apos;) &gt;= 0) {        return &quot;Alipay&quot;;    }    //哪个都不是    return &quot;false&quot;;}</code></pre><h4 id="初始化一个所有元素都相同的数组"><a href="#初始化一个所有元素都相同的数组" class="headerlink" title="初始化一个所有元素都相同的数组"></a>初始化一个所有元素都相同的数组</h4><pre><code>eg:Array(8).fill(1) //初始化一个数组，元素都为1</code></pre><h4 id="We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array"><a href="#We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array" class="headerlink" title="We call .slice() to copy the squares array instead of mutating the existing array"></a>We call .slice() to copy the squares array instead of mutating the existing array</h4><pre><code>eg: const squares = this.state.squares.slice();        squares[i] = &apos;X&apos;;        this.setState({squares: squares});</code></pre><h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><pre><code>eg:  JSON.parse(cashier.replace(/&amp;quot;/gi,&apos;&quot;&apos;));</code></pre>]]></content>
     
@@ -370,6 +405,8 @@
     </summary>
     
     
+      <category term="javascript" scheme="https://summerangel.github.io/tags/javascript/"/>
+    
   </entry>
   
   <entry>
@@ -377,7 +414,7 @@
     <link href="https://summerangel.github.io/2017/10/22/about-react/"/>
     <id>https://summerangel.github.io/2017/10/22/about-react/</id>
     <published>2017-10-22T13:36:07.000Z</published>
-    <updated>2017-11-07T05:13:35.000Z</updated>
+    <updated>2018-07-11T15:00:34.303Z</updated>
     
     <content type="html"><![CDATA[<h2 id="record-something-happened-in-react-project"><a href="#record-something-happened-in-react-project" class="headerlink" title="record something happened in react project"></a>record something happened in react project</h2><h4 id="about-div-editable"><a href="#about-div-editable" class="headerlink" title="about div editable"></a>about div editable</h4><p>  使用contentEditable属性让div可编辑时，去掉react警告：</p><p>  “<br>  contentEditable=”true” suppressContentEditableWarning=”true”<br>  “</p><h4 id="input焦点自动定位：autoFocus"><a href="#input焦点自动定位：autoFocus" class="headerlink" title="input焦点自动定位：autoFocus"></a>input焦点自动定位：autoFocus</h4><pre><code>reference: https://github.com/erikras/redux-form/issues/1382</code></pre><h4 id="生成二维码插件"><a href="#生成二维码插件" class="headerlink" title="生成二维码插件"></a>生成二维码插件</h4><pre><code>https://github.com/soldair/node-qrcode</code></pre><h4 id="care-about"><a href="#care-about" class="headerlink" title="care about"></a>care about</h4><pre><code>1、元素要有闭合标签，避免提示错误2、在react中使用this.变量名（当该变量变动时，不会触发render），如要render也更新，需将变量放在this.state里面</code></pre><h4 id="使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow"><a href="#使用classnames-动态加样式，eg-className-‘card-box’-otherStyle-‘show’-this-props-isShow" class="headerlink" title="使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})"></a>使用classnames, 动态加样式，eg: className(‘card-box’, otherStyle, {‘show’: (this.props.isShow)})</h4><h4 id="Data-change-without-mutation"><a href="#Data-change-without-mutation" class="headerlink" title="Data change without mutation"></a>Data change without mutation</h4><pre><code>eg: var player = {score: 1, name: &apos;Jeff&apos;};    var newPlayer = Object.assign({}, player, {score: 2});    // Now player is unchanged, but newPlayer is {score: 2, name: &apos;Jeff&apos;}    // Or if you are using object spread syntax proposal, you can write:    // var newPlayer = {...player, score: 2};</code></pre>]]></content>
     
@@ -391,6 +428,8 @@
     </summary>
     
     
+      <category term="react" scheme="https://summerangel.github.io/tags/react/"/>
+    
   </entry>
   
   <entry>
@@ -398,7 +437,7 @@
     <link href="https://summerangel.github.io/2017/10/22/good-code-framents/"/>
     <id>https://summerangel.github.io/2017/10/22/good-code-framents/</id>
     <published>2017-10-22T13:30:12.000Z</published>
-    <updated>2018-04-02T09:24:46.615Z</updated>
+    <updated>2018-07-11T15:00:34.338Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/10/22/good-code-framents/sun.jpg" alt="A lot need to learn,I'm such stupid" title="A lot need to learn,I'm such stupid"><h4 id="1、将一维数组转为二维数组："><a href="#1、将一维数组转为二维数组：" class="headerlink" title="1、将一维数组转为二维数组："></a>1、将一维数组转为二维数组：</h4><pre><code>var arr=[1,2,3,4,5,6,7],ar=[];               while(arr.length)ar.push(arr.splice(0,3));</code></pre><h4 id="2、手机号校验："><a href="#2、手机号校验：" class="headerlink" title="2、手机号校验："></a>2、手机号校验：</h4><pre><code>if ((mobile.length === 0) || !/^0?(13|15|18|14|17)[0-9]{9}$/.test(phone)) {    alert(&apos;请输入正确的手机号码&apos;);    return false;    }</code></pre><h4 id="3、密码长度只能为8-20位"><a href="#3、密码长度只能为8-20位" class="headerlink" title="3、密码长度只能为8~20位:"></a>3、密码长度只能为8~20位:</h4><pre><code>if (!/^[0-9a-zA-Z]{8,20}$/.test(password)) {    alert(&apos;密码长度只能为8~20位&apos;);    return false;}</code></pre><h4 id="4、验证6位验证码："><a href="#4、验证6位验证码：" class="headerlink" title="4、验证6位验证码："></a>4、验证6位验证码：</h4><pre><code>checkPayPassword(val) {    return /^\d{6}$/.test(val)    }</code></pre><h4 id="5、手机每四位空格隔开"><a href="#5、手机每四位空格隔开" class="headerlink" title="5、手机每四位空格隔开"></a>5、手机每四位空格隔开</h4><pre><code>phoneNoSplit (phone) {    let reg = /^(\d{4})(\d{4})(\d{3})$/;    let matches = reg.exec(phone);    return matches[1] + &apos; &apos; + matches[2] + &apos; &apos; + matches[3];  }</code></pre><h4 id="6、只输入数字带两位小数点"><a href="#6、只输入数字带两位小数点" class="headerlink" title="6、只输入数字带两位小数点"></a>6、只输入数字带两位小数点</h4><pre><code>const numberOnly = /^[1-9]+([.]{1}[0-9]{0,2}){0,1}$/;numberOnly.test(value);</code></pre><h4 id="6、头像处理"><a href="#6、头像处理" class="headerlink" title="6、头像处理"></a>6、头像处理</h4><pre><code>html:    &lt;input id=&quot;fileBtn&quot; type=&quot;file&quot; onchange=&quot;upload(&apos;#fileBtn&apos;, &apos;#img&apos;);&quot; accept=&quot;image/*&quot; /&gt;    # 解析    # accept 属性（允许上传两种文件类型：gif 和 jpeg）    # capture 捕获到系统默认的设备，有三个参数可设置  camera--照相机； camcorder--摄像机； microphone--录音    # 参数一表示 &quot;选择文件&quot; 的 id，参数二表示 &quot;显示图片&quot; 的 id，js:    var upload = function(c, d){        &quot;use strict&quot;;        var $c = document.querySelector(c),            $d = document.querySelector(d),            file = $c.files[0],            reader = new FileReader();        reader.readAsDataURL(file);        reader.onload = function(e){            $d.setAttribute(&quot;src&quot;, e.target.result);        };    };    # 解析    # 参数在上面 HTML 就已经讲解了，    # file 表示你选中的那个图片，然后它里面有几个属性 name、size、type、slice等，也都非常实用，    # FileReader作为文件API的重要成员用于读取文件，根据W3C的定义，FileReader接口提供了读取文件的方法和包含读取结果的事件模型。    # 调用 FileReader 的 readAsDataURL 接口，将启动异步加载文件内容，通过给 reader 监听一个 onload 事件，    # 将数据加载完毕后，在onload事件处理中，通过 event 的 result 属性即可获得文件内容，然后扔进 img 的 src 即可 打开图片并预览。    reference: https://www.idaima.com/article/12159</code></pre><h4 id="7、将一个数组加入到另外一个数组中："><a href="#7、将一个数组加入到另外一个数组中：" class="headerlink" title="7、将一个数组加入到另外一个数组中："></a>7、将一个数组加入到另外一个数组中：</h4><pre><code>Array.prototype.push.apply(updateNavListData[1].types,techList);</code></pre><h4 id="8、删除对象中值为空或者null的属性："><a href="#8、删除对象中值为空或者null的属性：" class="headerlink" title="8、删除对象中值为空或者null的属性："></a>8、删除对象中值为空或者null的属性：</h4><pre><code>for (var p in params) {        if (!params[p]) {          delete params[p];        }      }</code></pre><h4 id="9、动态给a标签加电话号码："><a href="#9、动态给a标签加电话号码：" class="headerlink" title="9、动态给a标签加电话号码："></a>9、动态给a标签加电话号码：</h4><pre><code>&lt;a href={&quot;tel:&quot; + this.state.orderDetailData.storePhone}  className=&quot;contact-shop&quot;&gt;联系门店&lt;/a&gt;</code></pre><h4 id="10、左右圆角："><a href="#10、左右圆角：" class="headerlink" title="10、左右圆角："></a>10、左右圆角：</h4><pre><code>.br-left {  border-top-left-radius: 20px;  border-bottom-left-radius: 20px;}.br-right {  border-top-right-radius: 20px;  border-bottom-right-radius: 20px;}</code></pre><h4 id="11、根据生日带出星座："><a href="#11、根据生日带出星座：" class="headerlink" title="11、根据生日带出星座："></a>11、根据生日带出星座：</h4><pre><code>// 根据生日的月份和日期，计算星座。function getAstro(month,day){  var s=&quot;魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯&quot;;  var arr=[20,19,21,21,21,22,23,23,23,23,22,22];  return s.substr(month*2-(day&lt;arr[month-1]?2:0),2);}reference: http://m.jb51.net/article/98208.htm</code></pre>]]></content>
     
@@ -413,6 +452,8 @@
     </summary>
     
     
+      <category term="javascript" scheme="https://summerangel.github.io/tags/javascript/"/>
+    
   </entry>
   
   <entry>
@@ -420,7 +461,7 @@
     <link href="https://summerangel.github.io/2017/10/22/command-magic/"/>
     <id>https://summerangel.github.io/2017/10/22/command-magic/</id>
     <published>2017-10-22T13:30:12.000Z</published>
-    <updated>2018-01-03T02:57:56.000Z</updated>
+    <updated>2018-07-11T15:00:34.315Z</updated>
     
     <content type="html"><![CDATA[<h4 id="命令生成圣诞树"><a href="#命令生成圣诞树" class="headerlink" title="命令生成圣诞树"></a>命令生成圣诞树</h4><pre><code>打开终端，确认已安装node，输入  npm xmas生成一个头像：npm visnup</code></pre>]]></content>
     
@@ -435,28 +476,7 @@
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>change-to-hexo</title>
-    <link href="https://summerangel.github.io/2017/10/22/change-to-hexo/"/>
-    <id>https://summerangel.github.io/2017/10/22/change-to-hexo/</id>
-    <published>2017-10-22T08:21:25.000Z</published>
-    <updated>2017-12-27T07:22:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p>This is a blog to record some commands to publish the blog based on hexo to avoid forgetting.</p><p>if you want to use hexo too, you could see the doc in hexo’s page,it tells you step by step.<br>the url is<br><a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p><p>The main command:</p><p>firstly,you should have git and node installed,it is fundamentally for developers.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g // the command to install hexo-cli</div><div class="line"></div><div class="line">hexo init (folder&apos;s name) //init a hexo folder</div><div class="line"></div><div class="line">cd (folder&apos;s name) //to the folder&apos;s root path</div><div class="line"></div><div class="line">git init //at the folder&apos;s root path execute the command</div><div class="line"></div><div class="line">hexo server  //run the project (the url to open it is http://localhost:4000)</div></pre></td></tr></table></figure><p>below are the commands you will used frequently:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo new page (folder&apos;s name) // this command creates a new folder, usually under the source folder</div><div class="line"></div><div class="line">hexo new [layout] (folder&apos;s name) //this command creates a new post which you can edit you blog</div></pre></td></tr></table></figure><p>finally, the deploy commands:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Steps&quot;&gt;&lt;a href=&quot;#Steps&quot; class=&quot;headerlink&quot; title=&quot;Steps&quot;&gt;&lt;/a&gt;Steps&lt;/h2&gt;&lt;p&gt;This is a blog to record some commands to publish the blog
-      
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://summerangel.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="trick" scheme="https://summerangel.github.io/tags/trick/"/>
     
   </entry>
   
