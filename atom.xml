@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-07-11T14:55:54.606Z</updated>
+  <updated>2018-07-18T14:53:46.078Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Wechat share config</title>
+    <link href="https://summerangel.github.io/2018/07/18/wechat-share/"/>
+    <id>https://summerangel.github.io/2018/07/18/wechat-share/</id>
+    <published>2018-07-18T14:25:17.000Z</published>
+    <updated>2018-07-18T14:53:46.078Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="One-Add-domain"><a href="#One-Add-domain" class="headerlink" title="One: Add domain"></a>One: Add domain</h1><p><a href="https://mp.weixin.qq.com/" target="_blank" rel="external">Login in the Wechat Official Accounts</a>,find the Setting –&gt; Official Accounts Setting in the left down slide bar,and you will see Official Accounts Setting in the right main area,then switch to the tab Function Setting,and find the JS interface safety domain in this tab,and the click the Setting button after it,you will see a txt file in the popup dialog,download it and put it in the server besides in your online website root,make sure it can be previewed after putting it in,the you add the project’s domain in this page you are editting,then save it.<br><a href="https://jingyan.baidu.com/article/fa4125acfd4cdc28ac7092f4.html" target="_blank" rel="external">Click here to see steps with picture</a></p><h1 id="Two-Add-IP-white-list"><a href="#Two-Add-IP-white-list" class="headerlink" title="Two: Add IP white list"></a>Two: Add IP white list</h1><p><a href="https://mp.weixin.qq.com/" target="_blank" rel="external">Login in the Wechat Official Accounts</a>,find the Development –&gt; Basic Config in the left down slide bar,and you will see the Official Accounts Develop Info in the right main area,there exists a title show IP white list: click View button,and click Modify button,add the related IP.<br><a href="https://jingyan.baidu.com/article/4e5b3e1904fccc91901e241c.html" target="_blank" rel="external">Click here to see steps with picture</a></p><h1 id="Three-About-update"><a href="#Three-About-update" class="headerlink" title="Three: About update"></a>Three: About update</h1><p>After changing a new Official Accounts,don’t forget to update the appId and appSecret in your code.</p><h1 id="Last-Whatever"><a href="#Last-Whatever" class="headerlink" title="Last: Whatever"></a>Last: Whatever</h1><p>When you need to share with pretty title and image,above config in Wechat Official Accounts is necessary.This article is written in vscode, the new editor vscode is really awesome.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;One-Add-domain&quot;&gt;&lt;a href=&quot;#One-Add-domain&quot; class=&quot;headerlink&quot; title=&quot;One: Add domain&quot;&gt;&lt;/a&gt;One: Add domain&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.
+      
+    
+    </summary>
+    
+    
+      <category term="wechat" scheme="https://summerangel.github.io/tags/wechat/"/>
+    
+  </entry>
   
   <entry>
     <title>The project of react-native come to an end</title>
@@ -453,30 +476,6 @@
     
     
       <category term="javascript" scheme="https://summerangel.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>good-code-framents</title>
-    <link href="https://summerangel.github.io/2017/10/22/command-magic/"/>
-    <id>https://summerangel.github.io/2017/10/22/command-magic/</id>
-    <published>2017-10-22T13:30:12.000Z</published>
-    <updated>2018-07-11T15:00:34.315Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="命令生成圣诞树"><a href="#命令生成圣诞树" class="headerlink" title="命令生成圣诞树"></a>命令生成圣诞树</h4><pre><code>打开终端，确认已安装node，输入  npm xmas生成一个头像：npm visnup</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;命令生成圣诞树&quot;&gt;&lt;a href=&quot;#命令生成圣诞树&quot; class=&quot;headerlink&quot; title=&quot;命令生成圣诞树&quot;&gt;&lt;/a&gt;命令生成圣诞树&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;打开终端，确认已安装node，输入  npm xmas
-生成一个头像：npm vis
-      
-    
-    </summary>
-    
-    
-      <category term="trick" scheme="https://summerangel.github.io/tags/trick/"/>
     
   </entry>
   
