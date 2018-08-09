@@ -149,6 +149,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-issue-record" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/issue-record/">issue-record</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/08/10/issue-record/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/08/10/issue-record/" class="archive-article-date">
+  	<time datetime="2018-08-09T16:57:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-wechat-share" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -955,100 +1035,6 @@ brew install pkg-config cairo libpng jpeg giflib
 
 
   
-    <article id="post-mini-programme-snippets" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/07/mini-programme-snippets/">Some simple snippets about mini-programme</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、Remove-the-scroll-bar-in-scroll-view"><a href="#一、Remove-the-scroll-bar-in-scroll-view" class="headerlink" title="一、Remove the scroll bar in scroll-view"></a>一、Remove the scroll bar in scroll-view</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">::-webkit-scrollbar &#123;</div><div class="line">     width: 0;</div><div class="line">     height: 0;</div><div class="line">     color: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h4 id="二、Enable-scroll-in-scroll-view"><a href="#二、Enable-scroll-in-scroll-view" class="headerlink" title="二、Enable scroll in scroll-view"></a>二、Enable scroll in scroll-view</h4><p>  the following css are needed to let the scroll-view to scroll:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">width: 100%;</div><div class="line">white-space: nowrap;</div></pre></td></tr></table></figure>
-<h4 id="三、Change-the-background-color-of-the-whole-page"><a href="#三、Change-the-background-color-of-the-whole-page" class="headerlink" title="三、Change the background-color of the whole page"></a>三、Change the background-color of the whole page</h4><p>   Add following to your css file:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Page &#123;</div><div class="line">  display: block;</div><div class="line">  min-height: 100%;</div><div class="line">  background-color: (here is the color you want);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="四、Using-the-unit-of-rpx-to-adjust-different-phone-size"><a href="#四、Using-the-unit-of-rpx-to-adjust-different-phone-size" class="headerlink" title="四、Using the unit of rpx to adjust different phone size"></a>四、Using the unit of rpx to adjust different phone size</h4><p>  The formula of transfer like following, use iphone6 as example:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1px = 2rpx;</div><div class="line">1rem = 750/20;</div></pre></td></tr></table></figure>
-<p>   if you want to know more about this, you can step into <a href="http://www.cnblogs.com/fayin/p/6346754.html" target="_blank" rel="external">this article</a></p>
-<h4 id="五、May-be-a-bug"><a href="#五、May-be-a-bug" class="headerlink" title="五、May be a bug"></a>五、May be a bug</h4><p>   Don’t add auto-focus to the element input,it will cause the death of your project(the situation I confronted was:<br>   I can’t go back nor scroll the page)</p>
-<h4 id="六、Something-I-always-forget"><a href="#六、Something-I-always-forget" class="headerlink" title="六、Something I always forget"></a>六、Something I always forget</h4><p>   Dynamically give a class to an element:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class=&quot;shopcart &#123;&#123; cartShow ? &apos;show&apos; : &apos;&apos; &#125;&#125;&quot;</div></pre></td></tr></table></figure>
-<p>   Add key to a recycle:</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wx:key=&quot;unique&quot;</div></pre></td></tr></table></figure>
-<p>   All above are which I met after completing an static mini-project.</p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2018/05/07/mini-programme-snippets/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/05/07/mini-programme-snippets/" class="archive-article-date">
-  	<time datetime="2018-05-07T14:54:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mini-programme</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1148,10 +1134,6 @@ brew install pkg-config cairo libpng jpeg giflib
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">deploy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1164,15 +1146,11 @@ brew install pkg-config cairo libpng jpeg giflib
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">trick</a>
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1180,15 +1158,19 @@ brew install pkg-config cairo libpng jpeg giflib
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">trick</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
+                <a href="javascript:void(0)" class="js-tag color5">mini-programme</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mini-programme</a>
+                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1205,6 +1187,10 @@ brew install pkg-config cairo libpng jpeg giflib
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">deploy</a>
               </li>
             
             <div class="clearfix"></div>
