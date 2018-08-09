@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://summerangel.github.io/"/>
-  <updated>2018-08-09T16:59:00.168Z</updated>
+  <updated>2018-08-09T17:29:21.670Z</updated>
   <id>https://summerangel.github.io/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="https://summerangel.github.io/2018/08/10/issue-record/"/>
     <id>https://summerangel.github.io/2018/08/10/issue-record/</id>
     <published>2018-08-09T16:57:45.000Z</published>
-    <updated>2018-08-09T16:59:00.168Z</updated>
+    <updated>2018-08-09T17:29:21.670Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="No-complex-redux-to-realise-logout-when-token-is-expired"><a href="#No-complex-redux-to-realise-logout-when-token-is-expired" class="headerlink" title="No complex redux to realise logout when token is expired"></a>No complex redux to realise logout when token is expired</h4><p>I was using a way found in github which not took effect at the end,I don’t know why.but the way found is a good way to some extends.<br><a href="https://github.com/mrarronz/react-native-blog-examples/blob/master/Chapter5-Navigation/ReactNavigationExample/src/screen/LoginScreen.js" target="_blank" rel="external">here is the github address</a>,may help someone.</p><p>tonight I found a really simply and good way to complete the function,which use the method of event,we listen the callback result of the interface,when gave us the code of token expired, then emit the event,and we add an listener in our my page(which usually the place of the logout button),this is the point,when the my page found the event, we call the logout function which we usually put it in the logout button,over, tested,it works.</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;No-complex-redux-to-realise-logout-when-token-is-expired&quot;&gt;&lt;a href=&quot;#No-complex-redux-to-realise-logout-when-token-is-expired&quot; class=
+      
     
     </summary>
     
