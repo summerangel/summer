@@ -157,7 +157,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/react-webpack-babel/">react-webpack-babel</a>
+      <a class="article-title" href="/2018/09/17/react-webpack-babel/">Exploring Webpack4 and Babel7 In React16</a>
     </h1>
   
 
@@ -165,43 +165,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Exploring-Webpack4-and-Babel7-In-React16"><a href="#Exploring-Webpack4-and-Babel7-In-React16" class="headerlink" title="Exploring Webpack4 and Babel7 In React16"></a>Exploring Webpack4 and Babel7 In React16</h2><h3 id="One、Create-Project"><a href="#One、Create-Project" class="headerlink" title="One、Create Project"></a>One、Create Project</h3><pre><code>1、 Create project in your computer, name the project whatever you want: `mkdir react-webpack-kit &amp;&amp; cd react-webpack-kit`;
+        <h3 id="One、Create-Project"><a href="#One、Create-Project" class="headerlink" title="One、Create Project"></a>One、Create Project</h3><p>  1、 Create project in your computer, name the project whatever you want:<br>  <code>mkdir react-webpack-kit &amp;&amp; cd react-webpack-kit</code>;</p>
+<p>  2、Init a package.json file: <code>npm init -y</code>;</p>
+<h3 id="Two、Dependencies-that-webpack-need"><a href="#Two、Dependencies-that-webpack-need" class="headerlink" title="Two、Dependencies that webpack need"></a>Two、Dependencies that webpack need</h3><p>   1、Since you are in the directory you just created, you can exectute the command directly:<br>    <code>yarn add -E -D webpack webpack-cli webpack-merge webpack-dev-server autoprefixer css-loader style-loader postcss-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin html-webpack-plugin  clean-webpack-plugin file-loader url-loader</code></p>
+<p>   2、In <code>webpack4</code>, <code>webpack-cli</code> is required; <code>webpack-merge</code> is for different webpack config file merge, for there are two different or may be more environments, we can write different config files to adapt different environments; <code>webpack-dev-server</code> is a server set up by webpack, usually we use it in the development environment.</p>
+<p>   3、<code>css-loader style-loader</code>：is for css file compile, if you use sass, you need to install <code>node-sass</code> and <code>sass-loader</code> to compile, similarly if you use less, you need <code>less-loader</code>; <code>autoprefixer postcss-loader</code> is for different browsers compatibility, and also we need to create a postcss config file, you can doing: <code>touch postcss.config.js</code>, and add the config in it，likes following:</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        require(&apos;autoprefixer&apos;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>   4、<code>mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin</code>: although webpack will uglify the code in production environment,it doesn’t uglify the css files, we need other plugin to do this.</p>
+<p>   5、<code>html-webpack-plugin</code>: this plugin help us to copy the html file from our work directory to dist directory after packing, so we don’t need to copy it manually; <code>clean-webpack-plugin</code> is a plugin that clean the dist directory before webpack begin to pack;</p>
+<p>   6、<code>-E -D</code>: means install the plugin with fixed version and only install in devDependencies.</p>
+<h3 id="Three、dependencies-that-babel-need"><a href="#Three、dependencies-that-babel-need" class="headerlink" title="Three、dependencies that babel need"></a>Three、dependencies that babel need</h3><p>   1、After installing the plugins that webpack need, now we begin to install the plugins babel needs:</p>
+<pre><code>`yarn add -E -D babel-loader @babel/core @babel/plugin-transform-runtime @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-react`
+</code></pre><p>   2、<code>babel-loader @babel/core</code>：no need to explain;</p>
+<p>   3、<code>@babel/plugin-transform-runtime</code>：is for development environment, and also we should install runtime in production: <code>yarn add -E @babel/runtime</code>;</p>
+<p>   4、<code>@babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties</code>：if we use es6+, then we need these.</p>
+<p>   5、<code>@babel/preset-env @babel/preset-react</code>：mostly for react environment compile.</p>
+<p>   6、Create babel config file: <code>touch babel.config.js</code>(here we should create this file instead of <code>.babelrc</code> file, for there will be a problem which troubled me a lot), the problem looks like:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Support for the experimental syntax &apos;classProperties&apos; isn&apos;t currently enabled (57:10)</span><br><span class="line">    ......</span><br><span class="line">Add @babel/plugin-proposal-class-properties (https://git.io/vb4Ss) to the &apos;plugins&apos; section of your Babel config to enable transformation.</span><br></pre></td></tr></table></figure>
+<h3 id="Four、Mock-back-end-data"><a href="#Four、Mock-back-end-data" class="headerlink" title="Four、Mock back-end data"></a>Four、Mock back-end data</h3><p>   1、Here I use the packages <code>mockjs</code> and <code>json-server</code>, it’s really awesome:<br>      <code>yarn add -E -D mockjs json-server</code></p>
+<h3 id="Five、Simple-frame-is-ready"><a href="#Five、Simple-frame-is-ready" class="headerlink" title="Five、Simple frame is ready"></a>Five、Simple frame is ready</h3><p>   Now the project dependencies is amost done, you would see the source code by clicking <a href="https://github.com/summerangel/react-webpack-kit" target="_blank" rel="noopener">this</a>;</p>
 
-2、Init a package.json file: `npm init -y`;
-</code></pre><h3 id="Two、Dependencies-that-webpack-need"><a href="#Two、Dependencies-that-webpack-need" class="headerlink" title="Two、Dependencies that webpack need"></a>Two、Dependencies that webpack need</h3><pre><code>1、Since you are in the directory you just created, you can exectute the command directly:
-
-    `yarn add -E -D webpack webpack-cli webpack-merge webpack-dev-server autoprefixer css-loader style-loader postcss-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin html-webpack-plugin  clean-webpack-plugin file-loader url-loader`
-
-2、In webpack4, webpack-cli is required; webpack-merge is for different webpack config file merge, for there are two different or may be more environments, we can write different config files to adapt different environments; webpack-dev-server is a server set up by webpack, usually we use it in the development environment.
-
-3、css-loader style-loader：is for css file compile, if you use sass, you need to install node-sass and sass-loader to compile, similarly if you use less, you need less-loader; autoprefixer postcss-loader is for different browsers compatibility, and also we need to create a postcss config file, you can doing: `touch postcss.config.js`, and add the config in it，likes following:
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        require(&apos;autoprefixer&apos;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-4、mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin: although webpack will uglify the code in production environment,it doesn&apos;t uglify the css files, we need other plugin to do this.
-
-5、html-webpack-plugin: this plugin help us to copy the html file from our work directory to dist directory after packing, so we don&apos;t need to copy it manually; clean-webpack-plugin is a plugin that clean the dist directory before webpack begin to pack;
-
-6、`-E -D`: means install the plugin with fixed version and only install in devDependencies.
-</code></pre><h3 id="Three、dependencies-that-babel-need"><a href="#Three、dependencies-that-babel-need" class="headerlink" title="Three、dependencies that babel need"></a>Three、dependencies that babel need</h3><pre><code>1、After installing the plugins that webpack need, now we begin to install the plugins babel needs:
-
-  `yarn add -E -D babel-loader @babel/core @babel/plugin-transform-runtime @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-react`
-
-2、babel-loader @babel/core：no need to explain;
-
-3、@babel/plugin-transform-runtime：is for development environment, and also we should install runtime in production: `yarn add -E @babel/runtime`;
-
-4、@babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties：if we use es6+, then we need these.
-
-5、@babel/preset-env @babel/preset-react：mostly for react environment compile.
-
-6、Create babel config file: `touch babel.config.js`(here we should create this file instead of .babelrc file, for there will be a problem which troubled me a lot), the problem looks like:
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Support for the experimental syntax &apos;classProperties&apos; isn&apos;t currently enabled (57:10)</span><br><span class="line">......</span><br><span class="line">Add @babel/plugin-proposal-class-properties (https://git.io/vb4Ss) to the &apos;plugins&apos; section of your Babel config to enable transformation.</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="Four、Mock-back-end-data"><a href="#Four、Mock-back-end-data" class="headerlink" title="Four、Mock back-end data"></a>Four、Mock back-end data</h3><pre><code>1、Here I use the packages mockjs and json-server, it&apos;s really awesome:
-    `yarn add -E -D mockjs json-server`
-</code></pre><h3 id="Five、Simple-frame-is-ready"><a href="#Five、Simple-frame-is-ready" class="headerlink" title="Five、Simple frame is ready"></a>Five、Simple frame is ready</h3><pre><code>Now the project dependencies is amost done, you would see the source code by clicking [this](https://github.com/summerangel/react-webpack-kit);
-</code></pre>
       
 
       
@@ -1174,11 +1157,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
