@@ -150,6 +150,191 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-about-javascript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/22/about-javascript/">about-javascript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names"><a href="#1、1-Use-computed-property-names-when-creating-objects-with-dynamic-property-names" class="headerlink" title="1、1) Use computed property names when creating objects with dynamic property names."></a>1、1) Use computed property names when creating objects with dynamic property names.</h4><pre><code> eg: function getKey(k) {
+       return `a key named ${k}`;
+     }
+     const obj = {
+       id: 5,
+       name: &apos;San Francisco&apos;,
+       [getKey(&apos;enabled&apos;)]: true,
+     };
+
+2) Use array spreads ... to copy arrays.
+
+   eg: const len = items.length;
+       const itemsCopy = [];
+       const itemsCopy = [...items];
+
+3) To convert an array-like object to an array, use Array.from.
+
+   eg: const foo = document.querySelectorAll(&apos;.foo&apos;);
+       const nodes = Array.from(foo);
+
+4) Brilliant Array.prototype.reduce()
+
+   eg: // friends - an array of objects
+       // where object field &quot;books&quot; - list of favorite books
+       var friends = [{
+         name: &apos;Anna&apos;,
+         books: [&apos;Bible&apos;, &apos;Harry Potter&apos;],
+         age: 21
+       }, {
+         name: &apos;Bob&apos;,
+         books: [&apos;War and peace&apos;, &apos;Romeo and Juliet&apos;],
+         age: 26
+       }, {
+         name: &apos;Alice&apos;,
+         books: [&apos;The Lord of the Rings&apos;, &apos;The Shining&apos;],
+         age: 18
+       }];
+
+       // allbooks - list which will contain all friends&apos; books +
+       // additional list contained in initialValue
+       var allbooks = friends.reduce(function(prev, curr) {
+         return [...prev, ...curr.books];
+       }, [&apos;Alphabet&apos;]);
+
+       // allbooks = [
+       //   &apos;Alphabet&apos;, &apos;Bible&apos;, &apos;Harry Potter&apos;, &apos;War and peace&apos;,
+       //   &apos;Romeo and Juliet&apos;, &apos;The Lord of the Rings&apos;,
+       //   &apos;The Shining&apos;
+       // ]
+
+5) Use object destructuring when accessing and using multiple properties of an object. jscs:
+
+   eg: // good
+       function getFullName(user) {
+         const { firstName, lastName } = user;
+         return `${firstName} ${lastName}`;
+       }
+
+       // best
+       function getFullName({ firstName, lastName }) {
+         return `${firstName} ${lastName}`;
+       }
+
+6) Never use arguments, opt to use rest syntax ... instead
+
+   eg: // bad
+       function concatenateAll() {
+         const args = Array.prototype.slice.call(arguments);
+         return args.join(&apos;&apos;);
+       }
+
+       // good
+       function concatenateAll(...args) {
+         return args.join(&apos;&apos;);
+       }
+
+7) Never mutate parameters
+
+   eg: // bad
+       function f1(obj) {
+         obj.key = 1;
+       };
+
+       // good
+       function f2(obj) {
+         const key = Object.prototype.hasOwnProperty.call(obj, &apos;key&apos;) ? obj.key : 1;
+       };
+</code></pre><h4 id="Check-is-weixin-or-is-alipay"><a href="#Check-is-weixin-or-is-alipay" class="headerlink" title="Check is weixin or is alipay:"></a>Check is weixin or is alipay:</h4><pre><code>function IsWeixinOrAlipay(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    //判断是不是微信
+    if (ua.indexOf(&apos;micromessenger&apos;) &gt;= 0) {
+        return &quot;WeiXIN&quot;;
+    }
+    //判断是不是支付宝
+    if (ua.indexOf(&apos;alipayclient&apos;) &gt;= 0) {
+        return &quot;Alipay&quot;;
+    }
+    //哪个都不是
+    return &quot;false&quot;;
+}
+</code></pre><h4 id="初始化一个所有元素都相同的数组"><a href="#初始化一个所有元素都相同的数组" class="headerlink" title="初始化一个所有元素都相同的数组"></a>初始化一个所有元素都相同的数组</h4><pre><code>eg:Array(8).fill(1) //初始化一个数组，元素都为1
+</code></pre><h4 id="We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array"><a href="#We-call-slice-to-copy-the-squares-array-instead-of-mutating-the-existing-array" class="headerlink" title="We call .slice() to copy the squares array instead of mutating the existing array"></a>We call .slice() to copy the squares array instead of mutating the existing array</h4><pre><code>eg: const squares = this.state.squares.slice();
+        squares[i] = &apos;X&apos;;
+        this.setState({squares: squares});
+</code></pre><h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><pre><code>eg:  JSON.parse(cashier.replace(/&amp;quot;/gi,&apos;&quot;&apos;));
+</code></pre>
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2017/10/22/about-javascript/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2017/10/22/about-javascript/" class="archive-article-date">
+  	<time datetime="2017-10-22T13:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-about-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -502,7 +687,7 @@ reference: http://m.jb51.net/article/98208.htm
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page (folder&apos;s name) // this command creates a new folder, usually under the source folder</span><br><span class="line"></span><br><span class="line">hexo new [layout] (folder&apos;s name) //this command creates a new post which you can edit you blog</span><br></pre></td></tr></table></figure>
 <p>finally, the deploy commands:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h4 id="node-version-in-my-local-v8-4-0-record-here-avoid-version-error-for-my-own-business"><a href="#node-version-in-my-local-v8-4-0-record-here-avoid-version-error-for-my-own-business" class="headerlink" title="node version in my local: v8.4.0 (record here avoid version error for my own business)"></a>node version in my local: v8.4.0 (record here avoid version error for my own business)</h4>
       
 
       
@@ -752,11 +937,15 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+                <a href="javascript:void(0)" class="js-tag color3">regular</a>
               </li>
              
               <li class="article-tag-list-item">
