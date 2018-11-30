@@ -150,6 +150,159 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-about-css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/22/about-css/">about-css</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="单行显示省略号："><a href="#单行显示省略号：" class="headerlink" title="单行显示省略号："></a>单行显示省略号：</h4><pre><code> overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+多行显示省略号：
+ display: -webkit-box;
+ -webkit-line-clamp: 2; （多少行的时候显示）
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+
+三角箭头：
+.left_arrow {
+      position: relative;
+      .arrow_left {
+        margin: 5px auto;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -11px;
+        top: -7px;
+        .triangle_top {
+          border-left: 12px solid transparent;
+          border-right: 0px solid transparent;
+          border-bottom: 27px solid #FAD961;
+        }
+        .triangle_bottom {
+          border-left: 12px solid transparent;
+          border-right: 0 solid transparent;
+          border-top: 27px solid #FAD961;
+        }
+      }
+      .count_down {
+        padding: 6px 14px 7px 15px;
+        height: 51px;
+        background: linear-gradient(90deg, #FAD961 0%, #FF8E4E 100%);
+      }
+    }
+</code></pre><h4 id="在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><a href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）" class="headerlink" title="在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）"></a>在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</h4><h4 id="垂直居中-https-segmentfault-com-a-1190000000468431"><a href="#垂直居中-https-segmentfault-com-a-1190000000468431" class="headerlink" title="垂直居中 (https://segmentfault.com/a/1190000000468431)"></a>垂直居中 (<a href="https://segmentfault.com/a/1190000000468431" target="_blank" rel="noopener">https://segmentfault.com/a/1190000000468431</a>)</h4><pre><code>.center-vertical {
+  position: relative;
+  top: 50%;
+  transform: transformY(-50%);
+}
+
+或
+
+.center-vertical {
+   position: relative;
+   left: 50%;
+   transform: transformX(-50%);
+}
+</code></pre><h4 id="多重边框"><a href="#多重边框" class="headerlink" title="多重边框"></a>多重边框</h4><pre><code>div {
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    margin: 50px auto;
+    width: 400px
+}
+</code></pre><h4 id="浮点数转成整型：-0和-或"><a href="#浮点数转成整型：-0和-或" class="headerlink" title="浮点数转成整型：|0和~~或+"></a>浮点数转成整型：|0和~~或+</h4><pre><code>eg: var foo = (12.4 / 4.13) | 0;//结果为3
+    var bar = ~~(12.4 / 4.13);//结果为3
+</code></pre><h4 id="关于console"><a href="#关于console" class="headerlink" title="关于console"></a>关于console</h4><pre><code>var _log = console.log;
+console.log = function() {
+  _log.call(console, &apos;%c&apos; + [].slice.call(arguments).join(&apos; &apos;), &apos;color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);&apos;);
+};
+</code></pre><h4 id="半圆角："><a href="#半圆角：" class="headerlink" title="半圆角："></a>半圆角：</h4><pre><code>.left_circle {
+        left: -2px;
+        border: 1px solid #D6D6D6;
+        border-radius: 0 100% 100% 0/50%;
+        border-left: none;
+      }
+      .right_circle {
+        border: 1px solid #D6D6D6;
+        border-radius: 100% 0 0 100%/50%;
+        border-right: none;
+        right: -2px;
+      }
+</code></pre>
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2017/10/22/about-css/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2017/10/22/about-css/" class="archive-article-date">
+  	<time datetime="2017-10-22T13:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">technique</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-about-javascript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -933,6 +1086,10 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -941,7 +1098,7 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,11 +1106,11 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">software</a>
+                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -961,15 +1118,11 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,15 +1134,15 @@ reference: http://m.jb51.net/article/98208.htm
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
               </li>
              
               <li class="article-tag-list-item">

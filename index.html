@@ -150,6 +150,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-convenient-regular-brings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/convenient-regular-brings/">convenient that regular brings</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Lately I was learning regular, as you know, I have recorded the note about regular in last blog, I’m crazy about regular in some extends,for every function I met in the project,the first solution I come out is using regular, and the time is coming.</p>
+<h2 id="The-exciting-moment"><a href="#The-exciting-moment" class="headerlink" title="The exciting moment"></a>The exciting moment</h2><p>Since we front end developers in my company is cooperating with the developer of Android and Ios, they provide us with the webview and we develop the pages of h5, which is so called hybrid. Ok, no more useless words,the function is we need to decrypt the data fetched from backend interface,some fields in the data is encrypted for the security’s sake. Having known this, I suddenly think of regular, it can perfectly solve this problem, considering it for a moment, I consult with the backend developer, letting them create the fields expression special, so I can easily use regular.</p>
+<h2 id="Show-the-code"><a href="#Show-the-code" class="headerlink" title="Show the code"></a>Show the code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> decrypt = &#123;</span><br><span class="line">  decryptData(encryptedData, privateKey = PRIVATE_KEY) &#123;</span><br><span class="line">    <span class="keyword">var</span> decrypt = <span class="keyword">new</span> JSEncrypt();</span><br><span class="line">    decrypt.setPrivateKey(privateKey);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">'var '</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> encryptedData) &#123;</span><br><span class="line">      str = str + key + <span class="string">'='</span> + decrypt.decrypt(encryptedData[key]) + <span class="string">','</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/,$/</span>, <span class="string">';'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  getDecryptedDataFromNative(secretData, callback) &#123;</span><br><span class="line">    <span class="keyword">if</span> (isAndroid(USR_AGENT)) &#123;</span><br><span class="line">      getDecryptedDataFromAndroid(secretData, callback);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isIOS(USR_AGENT)) &#123;</span><br><span class="line">      getDecryptedDataFromIOS(secretData, callback);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  packExpression(expressData) &#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(expressData);</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/"#/g</span>, <span class="string">'eval('</span>).replace(<span class="regexp">/#"/g</span>, <span class="string">')'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 使用的时候直接调用这个方法，会返回加密后的数据，但是赋值的时候需要 数值.toFixed(2),这里没有处理；</span></span><br><span class="line"><span class="comment">   * @param data</span></span><br><span class="line"><span class="comment">   * @returns &#123;*&#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  executeExpression(data) &#123;</span><br><span class="line">    <span class="comment">// 本地使用自己的解密方法</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.location.hostname === <span class="string">'localhost'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> secretData = data.secretData || data.encryptMap;</span><br><span class="line">        <span class="keyword">if</span> (!!secretData) &#123;</span><br><span class="line">          <span class="keyword">let</span> decryptData = <span class="keyword">this</span>.decryptData(secretData, PRIVATE_KEY);</span><br><span class="line">          <span class="comment">// 解密后将加密数据去掉，防止干扰后面的表达式封装</span></span><br><span class="line">          data[<span class="string">'secretData'</span>] = <span class="literal">undefined</span>;</span><br><span class="line">          <span class="keyword">let</span> expression = <span class="keyword">this</span>.packExpression(data);</span><br><span class="line">          <span class="keyword">var</span> temp = &#123;&#125;;</span><br><span class="line">          <span class="comment">// 执行</span></span><br><span class="line">          <span class="built_in">eval</span>(decryptData + <span class="string">'temp = '</span> + expression + <span class="string">';'</span>);</span><br><span class="line">          resolve(temp);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          resolve(data);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isEmpty(data.secretData)) &#123;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(data);</span><br><span class="line">            <span class="keyword">let</span> expression = str.replace(<span class="regexp">/"#/g</span>, <span class="string">'eval('</span>).replace(<span class="regexp">/#"/g</span>, <span class="string">')'</span>);</span><br><span class="line">            <span class="keyword">this</span>.getDecryptedDataFromNative(data.secretData, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">let</span> decryptData = response; <span class="comment">// 接收原生返回的解密后数据</span></span><br><span class="line">              data[<span class="string">'secretData'</span>] = <span class="literal">undefined</span>;</span><br><span class="line">              <span class="keyword">var</span> temp = &#123;&#125;;</span><br><span class="line">              <span class="built_in">eval</span>(decryptData + <span class="string">'temp = '</span> + expression + <span class="string">';'</span>);</span><br><span class="line">              <span class="comment">// 执行</span></span><br><span class="line">              resolve(temp);</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            reject(e);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          resolve(data);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><p>At first, it is running smoothly in my local environment, but put it into the webview, a lot of problems come out, the tough one is, it is asynchronous to get the decrypted data from ios, I know it should be using Promise, but I don’t know where to put it in, it’s really sucks,furtunately, another colleague is good at it,helping me solved it.Here give my thanks to scopeWu and I really need to put some strength to understand promise deeply.</p>
+<h2 id="In-the-end"><a href="#In-the-end" class="headerlink" title="In the end"></a>In the end</h2><p>Without complex loop and check, the regular makes it more convenient to achieve the goal.A little happy successfuly to made it. And there is a long way to go to be good at regular.</p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/11/30/convenient-regular-brings/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/11/30/convenient-regular-brings/" class="archive-article-date">
+  	<time datetime="2018-11-30T02:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">regular</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-about-regular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1070,90 +1155,6 @@
 
 
   
-    <article id="[layout]-simple-scroll-with-css" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/25/simple-scroll-with-css/">Simple scroll realized by css</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Before-start-why-this-article-come-out"><a href="#Before-start-why-this-article-come-out" class="headerlink" title="Before start (why this article come out)"></a>Before start (why this article come out)</h4><p> At before time, I was tend to realize it by the library Swiper, which seems<br> too big and bad performance to left-right scroll.Actually we can realize it<br> by pure css in some degree,  I was told by my leader, so later I change it to<br> pure css.</p>
-<h4 id="Your-html"><a href="#Your-html" class="headerlink" title="Your html"></a>Your html</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent-wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child-each-wrap&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="Your-css"><a href="#Your-css" class="headerlink" title="Your css"></a>Your css</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.parent-wrap &#123;</span><br><span class="line">    overflow-x: scroll;</span><br><span class="line">    white-space: nowrap;  // here it seems necessary,if not add it, the</span><br><span class="line">    // scroll will take effect in the whole page,not the parent-wrap element</span><br><span class="line">    padding-bottom: 20px; // here it fix the problem the scroll style</span><br><span class="line">    // still show in IOS</span><br><span class="line">&#125;</span><br><span class="line"> .parent-wrap::-webkit-scrollbar &#123;</span><br><span class="line">    display: none // here is to clear the scroll style</span><br><span class="line"> &#125;</span><br><span class="line">.child-each-wrap &#123;</span><br><span class="line">     display: inline-block; // here is make sure the children are in the</span><br><span class="line">     // same line</span><br><span class="line">     margin-right: 40px;</span><br><span class="line">     width: 360px; // here you can custom your own style</span><br><span class="line">     height: 272px; // here you can custom your own style</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h4><p>   Though it looks simple enough, it took some time to implement it, just to<br> record it for the sake next time to use it.</p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2018/05/25/simple-scroll-with-css/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/05/25/simple-scroll-with-css/" class="archive-article-date">
-  	<time datetime="2018-05-25T14:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1257,6 +1258,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1265,7 +1270,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1273,11 +1278,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">software</a>
+                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1285,15 +1290,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,15 +1306,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
               </li>
              
               <li class="article-tag-list-item">

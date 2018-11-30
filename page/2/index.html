@@ -150,6 +150,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[layout]-simple-scroll-with-css" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/25/simple-scroll-with-css/">Simple scroll realized by css</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Before-start-why-this-article-come-out"><a href="#Before-start-why-this-article-come-out" class="headerlink" title="Before start (why this article come out)"></a>Before start (why this article come out)</h4><p> At before time, I was tend to realize it by the library Swiper, which seems<br> too big and bad performance to left-right scroll.Actually we can realize it<br> by pure css in some degree,  I was told by my leader, so later I change it to<br> pure css.</p>
+<h4 id="Your-html"><a href="#Your-html" class="headerlink" title="Your html"></a>Your html</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent-wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child-each-wrap&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="Your-css"><a href="#Your-css" class="headerlink" title="Your css"></a>Your css</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.parent-wrap &#123;</span><br><span class="line">    overflow-x: scroll;</span><br><span class="line">    white-space: nowrap;  // here it seems necessary,if not add it, the</span><br><span class="line">    // scroll will take effect in the whole page,not the parent-wrap element</span><br><span class="line">    padding-bottom: 20px; // here it fix the problem the scroll style</span><br><span class="line">    // still show in IOS</span><br><span class="line">&#125;</span><br><span class="line"> .parent-wrap::-webkit-scrollbar &#123;</span><br><span class="line">    display: none // here is to clear the scroll style</span><br><span class="line"> &#125;</span><br><span class="line">.child-each-wrap &#123;</span><br><span class="line">     display: inline-block; // here is make sure the children are in the</span><br><span class="line">     // same line</span><br><span class="line">     margin-right: 40px;</span><br><span class="line">     width: 360px; // here you can custom your own style</span><br><span class="line">     height: 272px; // here you can custom your own style</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h4><p>   Though it looks simple enough, it took some time to implement it, just to<br> record it for the sake next time to use it.</p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/05/25/simple-scroll-with-css/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/05/25/simple-scroll-with-css/" class="archive-article-date">
+  	<time datetime="2018-05-25T14:48:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[layout]-custom-map-overlay" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1054,159 +1138,6 @@ you can execute this command like this: git pull origin master --allow-unrelated
 
 
   
-    <article id="post-about-css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/22/about-css/">about-css</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="单行显示省略号："><a href="#单行显示省略号：" class="headerlink" title="单行显示省略号："></a>单行显示省略号：</h4><pre><code> overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
-多行显示省略号：
- display: -webkit-box;
- -webkit-line-clamp: 2; （多少行的时候显示）
- -webkit-box-orient: vertical;
- overflow: hidden;
-
-三角箭头：
-.left_arrow {
-      position: relative;
-      .arrow_left {
-        margin: 5px auto;
-        width: 0;
-        height: 0;
-        position: absolute;
-        left: -11px;
-        top: -7px;
-        .triangle_top {
-          border-left: 12px solid transparent;
-          border-right: 0px solid transparent;
-          border-bottom: 27px solid #FAD961;
-        }
-        .triangle_bottom {
-          border-left: 12px solid transparent;
-          border-right: 0 solid transparent;
-          border-top: 27px solid #FAD961;
-        }
-      }
-      .count_down {
-        padding: 6px 14px 7px 15px;
-        height: 51px;
-        background: linear-gradient(90deg, #FAD961 0%, #FF8E4E 100%);
-      }
-    }
-</code></pre><h4 id="在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）"><a href="#在移动端样式中，尽量不要写position-fixed-（eg-弹框：可以换成position-absolute-然后在底下那层加上position-relative-）" class="headerlink" title="在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）"></a>在移动端样式中，尽量不要写position: fixed;（eg:弹框：可以换成position: absolute;然后在底下那层加上position: relative;）</h4><h4 id="垂直居中-https-segmentfault-com-a-1190000000468431"><a href="#垂直居中-https-segmentfault-com-a-1190000000468431" class="headerlink" title="垂直居中 (https://segmentfault.com/a/1190000000468431)"></a>垂直居中 (<a href="https://segmentfault.com/a/1190000000468431" target="_blank" rel="noopener">https://segmentfault.com/a/1190000000468431</a>)</h4><pre><code>.center-vertical {
-  position: relative;
-  top: 50%;
-  transform: transformY(-50%);
-}
-
-或
-
-.center-vertical {
-   position: relative;
-   left: 50%;
-   transform: transformX(-50%);
-}
-</code></pre><h4 id="多重边框"><a href="#多重边框" class="headerlink" title="多重边框"></a>多重边框</h4><pre><code>div {
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);
-    height: 200px;
-    margin: 50px auto;
-    width: 400px
-}
-</code></pre><h4 id="浮点数转成整型：-0和-或"><a href="#浮点数转成整型：-0和-或" class="headerlink" title="浮点数转成整型：|0和~~或+"></a>浮点数转成整型：|0和~~或+</h4><pre><code>eg: var foo = (12.4 / 4.13) | 0;//结果为3
-    var bar = ~~(12.4 / 4.13);//结果为3
-</code></pre><h4 id="关于console"><a href="#关于console" class="headerlink" title="关于console"></a>关于console</h4><pre><code>var _log = console.log;
-console.log = function() {
-  _log.call(console, &apos;%c&apos; + [].slice.call(arguments).join(&apos; &apos;), &apos;color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);&apos;);
-};
-</code></pre><h4 id="半圆角："><a href="#半圆角：" class="headerlink" title="半圆角："></a>半圆角：</h4><pre><code>.left_circle {
-        left: -2px;
-        border: 1px solid #D6D6D6;
-        border-radius: 0 100% 100% 0/50%;
-        border-left: none;
-      }
-      .right_circle {
-        border: 1px solid #D6D6D6;
-        border-radius: 100% 0 0 100%/50%;
-        border-right: none;
-        right: -2px;
-      }
-</code></pre>
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/10/22/about-css/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2017/10/22/about-css/" class="archive-article-date">
-  	<time datetime="2017-10-22T13:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">technique</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1310,6 +1241,10 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1318,7 +1253,7 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1326,11 +1261,11 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">software</a>
+                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1338,15 +1273,11 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">baidu-map</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,15 +1289,15 @@ console.log = function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
               </li>
              
               <li class="article-tag-list-item">
