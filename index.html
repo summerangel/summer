@@ -150,6 +150,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-static-project-deploy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/12/static-project-deploy/">static-project-deploy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>It’s easily to forget,so record the steps when deploy a static project which with no server side language node,more easily deployed than node.</p>
+<h2 id="Get-your-ip-provided-by-server-cloud-provider"><a href="#Get-your-ip-provided-by-server-cloud-provider" class="headerlink" title="Get your ip provided by server cloud provider"></a>Get your ip provided by server cloud provider</h2><h4 id="how-to-get-ip"><a href="#how-to-get-ip" class="headerlink" title="how to get ip"></a>how to get ip</h4><p>I wrote one blog about how to buy and install related environments before,the name is ‘<a href="https://summerangel.github.io/2018/04/25/about-deploy/">How to deploy a website on Mac</a>‘.</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="1、Login-your-server-first"><a href="#1、Login-your-server-first" class="headerlink" title="1、Login your server first"></a>1、Login your server first</h3><p>open your terminal(terminal one):</p>
+<blockquote>
+<p>Use command line(just replace the ip with your own):<br><code>ssh -q -l root -p 22 94.191.27.xxx</code><br>then it will tip you to input your password</p>
+</blockquote>
+<h3 id="2、Copy-your-local-builded-project-into-your-server-machine"><a href="#2、Copy-your-local-builded-project-into-your-server-machine" class="headerlink" title="2、Copy your local builded project into your server machine"></a>2、Copy your local builded project into your server machine</h3><blockquote>
+<p>the file should be with .txt or .zip,otherwise it will cause error.<br>open another terminal(terminal two),you can open it with the shortcut key <code>command n</code>,and the copy command line is:<br><code>scp -p 22 /User/summer/leisure/project/build.zip root@94.191.27.xxx:/root/html/</code><br>you can get the dir of your local project by the command <code>pwd</code></p>
+</blockquote>
+<h3 id="3、Back-to-terminal-one-and-go-to-the-dir-which-receive-the-copied-zip-with-the-command"><a href="#3、Back-to-terminal-one-and-go-to-the-dir-which-receive-the-copied-zip-with-the-command" class="headerlink" title="3、Back to terminal one, and go to the dir which receive the copied zip with the command"></a>3、Back to terminal one, and go to the dir which receive the copied zip with the command</h3><p><code>cd /root/html/</code></p>
+<h3 id="4、unzip"><a href="#4、unzip" class="headerlink" title="4、unzip"></a>4、unzip</h3><p>Now we are in the dir of html,unzip the build.zip file with the command line:<br><code>unzip -o -d /root/html/ build.zip</code></p>
+<blockquote>
+<p>this means that unzip build.zip into dir /root/html<br>-o means cover the file with no hint<br>-d means unzip the file into the dir /root/html</p>
+</blockquote>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>I’m not familiar with nginx, so in the process of deploying, I was referring to the blog of <a href="https://segmentfault.com/a/1190000015685430" target="_blank" rel="noopener">This one</a>, and also met the problems mentioned in the article, just do as the author say.<br>So happy to make project display without running in local environment. </p>
+<h4 id="provide-the-nginx-conf-file"><a href="#provide-the-nginx-conf-file" class="headerlink" title="provide the nginx.conf file"></a>provide the nginx.conf file</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">user root;</span><br><span class="line">worker_processes  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       <span class="number">80</span>;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /card &#123;</span><br><span class="line">            alias /root/html/build;</span><br><span class="line">            index index.html index.htm;</span><br><span class="line">            try_files $uri $uri/ <span class="regexp">/card/i</span>ndex.html;</span><br><span class="line">        &#125;</span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/12/12/static-project-deploy/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/12/12/static-project-deploy/" class="archive-article-date">
+  	<time datetime="2018-12-12T13:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-12</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nginx、linux、server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-convenient-regular-brings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1046,115 +1142,6 @@
 
 
   
-    <article id="[layout]-about-react-native" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/about-react-native/">Holes in exploring react native</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、Hole-one"><a href="#一、Hole-one" class="headerlink" title="一、Hole one"></a>一、Hole one</h4><p>  When installing the react-native environment, confront the following:</p>
-
-<p> It took me almost one day to find this problem out,for I was first day to come this group to work on this react-native project,though I found another way to<br> fix this,I was curious to know what mistake cause this. Ok, focus came,it was caused by some missing files, which may be the window’s fault(another colleague passed it to the git repository using window system computer,then the window didn’t treat that file as a file, because it was treated as a reference addresss in ios,according to my ios<br> colleague), red rectangle is the missing file.</p>
-
-<h4 id="二、Debug-in-Browser-Mac-ios"><a href="#二、Debug-in-Browser-Mac-ios" class="headerlink" title="二、Debug in Browser (Mac ios)"></a>二、Debug in Browser (Mac ios)</h4><p> 1、 Press command + D in simulator, then the debug menu will show;<br> 2、 Menu One: Reload, equal to the quick command: command + R;<br> 3、 Menu Two: Debug JS Remotely, will open it in browser( <a href="http://localhost:8081/debugger-ui" target="_blank" rel="noopener">http://localhost:8081/debugger-ui</a> ) for you,let you debug like web project;</p>
-<p>   Reference to <a href="http://www.hangge.com/blog/cache/detail_1480.html" target="_blank" rel="noopener">this article</a></p>
-<h4 id="三、Day-two"><a href="#三、Day-two" class="headerlink" title="三、Day two"></a>三、Day two</h4><p>  This was a fucking day,all the whole day was fixing the stupid bug caused by others.</p>
-<p>  1、 Bug one: Infinite callback caused by realm when the version above 2.0.6, so to fix this,<br>  you guys need to install the version 2.0.6,may be the author will fix this later.</p>
-<p>   Reference to <a href="https://github.com/realm/realm-js/issues/1538" target="_blank" rel="noopener">this issue</a></p>
-<p>  2、 Bug two: post can not be transferred to the backend,although there exists<br>  <a href="https://github.com/axios/axios/issues/1321" target="_blank" rel="noopener">same issues</a>, we here are caused by<br>  ourselves.</p>
-<p>  3、 Bug three: may be you guys will meet this, fixing: just install the library they<br>  needed.</p>
- <img src="/2018/05/28/about-react-native/bug_three.jpg" title="problem may be met">
-<p>  4、 Tools: React Native Debugger, this is a good debugger tool to modify css and debugger js,<br>  I think it’s better than Chrome,of course,if you like it too,please support the<br>  author,give <a href="https://github.com/jhen0409/react-native-debugger" target="_blank" rel="noopener">the repo</a> a star: <a href="https://github.com/jhen0409/react-native-debugger" target="_blank" rel="noopener">https://github.com/jhen0409/react-native-debugger</a></p>
-<h4 id="四、Support-http-in-ios"><a href="#四、Support-http-in-ios" class="headerlink" title="四、Support http in ios"></a>四、Support http in ios</h4><p>   By default iOS isn’t supporting HTTP requests, only HTTPS requests are allowed.Make ios support http please refer to<br>   <a href="http://www.competa.com/blog/react-native-ios-http-network-request-failed/" target="_blank" rel="noopener">this article</a>,following is an example screenshot<br>   to solve this:<br></p>
-<h4 id="五、library-not-found-for-lQBImagePickerController"><a href="#五、library-not-found-for-lQBImagePickerController" class="headerlink" title="五、library not found for -lQBImagePickerController"></a>五、library not found for -lQBImagePickerController</h4><p>  This was caused by opening the wrong file here which should open workspace file, not project file. see <a href="https://github.com/ivpusic/react-native-image-crop-picker/issues/27" target="_blank" rel="noopener">here</a><br>  （Actually this don’t solve my problem, because another problem came out, xcode is so annoying,want to say bad words）</p>
-<h4 id="六、The-holes-met-in-exploring-to-run-project-in-my-real-phone"><a href="#六、The-holes-met-in-exploring-to-run-project-in-my-real-phone" class="headerlink" title="六、The holes met in exploring to run project in my real phone"></a>六、The holes met in exploring to run project in my real phone</h4><p>   1、First give an <a href="https://www.jianshu.com/p/f31116a76ea9" target="_blank" rel="noopener">article</a> about how to config xcode to run in your real phone</p>
-<p>   2、Your development team “xxx” does not support the Push Notifications capability<br>    Solve method:<br>    In your edit software to open xxx.entitlements like, find and delete “<key>aps-environment</key>“, then save this file.<br>  Refer to <a href="https://www.jianshu.com/p/ae0afe79c6bd" target="_blank" rel="noopener">this article</a></p>
-<p>   3、Xcode not supported for iOS 11.4 by Xcode 9.2 needed 9.4，explain this by a screenshot:</p>
-
-<p>  Find solving method in <a href="https://stackoverflow.com/questions/49720178/xcode-not-supported-for-ios-11-3-by-xcode-9-2-needed-9-3" target="_blank" rel="noopener">this article</a><br>  You can download <a href="http://www.mediafire.com/file/7m25vq8l35eplws/11.4+%2815F79%29.zip" target="_blank" rel="noopener">iOS 11.4 (15F79)</a> and put it in the directory of ‘Xcode.app//Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport’(you can open this by right click the icon of xcode in application,select the second one Show package Content),<a href="https://www.jianshu.com/p/7f662bfce732" target="_blank" rel="noopener">may be this one give you more detail</a>.<br>  Or update xcode to <a href="https://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12" target="_blank" rel="noopener">9.4</a></p>
-<p>   4、The entitlements specified in your application’s Code Signing Entitlements file are invalid, not permitted, or do not match those specified in your provisioning profile. (0xE8008016).</p>
-<p>   Takes hours to fix this, thanks this guy very much,you are hero: <a href="https://stackoverflow.com/questions/40985359/entitlements-dont-match-provisioning-profile-0xe8008016" target="_blank" rel="noopener">finally fixed this annoying issue</a><br>    records here:<br>       1) Select your project in the Project navigator;<br>       2) Select the “General” tab;<br>       3) To the left of the “General” tab, select your target to the left; (this should show a dropdown with a list of targets);<br>       4) Below your current target you should see an item {your project}Tests; select that;<br>       5) Check the signing properties in the general tab and make sure they are valid.</p>
-<p>   5、Finally,the environment to run the project in my real phone is completely finished,I feel so happy though the process to config the xcode as a new fellow is really fucking and freaking out.</p>
-<h4 id="七、Follow-up"><a href="#七、Follow-up" class="headerlink" title="七、Follow-up"></a>七、Follow-up</h4><p>  After configed the xcode to run project in my real phone, it is not the way I expected to, so I back to use the command way to debugger my project, still spent the whole morning to fix it.</p>
-<p>  records: There exists bug in using absolute css attribute in Android.</p>
-<h4 id="八、Bad-thing-for-me"><a href="#八、Bad-thing-for-me" class="headerlink" title="八、Bad thing for me"></a>八、Bad thing for me</h4><p>  May be clean unuseful files for more memory, I have cleaned the screenshots of this article, the update for my website need to be planned.</p>
-<h4 id="九、Exploring-react-native-snap-carousel"><a href="#九、Exploring-react-native-snap-carousel" class="headerlink" title="九、Exploring react-native-snap-carousel"></a>九、Exploring react-native-snap-carousel</h4><p>I want to realise certain css style,but simply look the api in react-native-snap-carousel isn’t met my requirement,so I download the source code to explore it in the examples the author give,but after installed all the dependencies,it just can’t run it,finally find <a href="https://github.com/archriss/react-native-snap-carousel/issues/93" target="_blank" rel="noopener">the way to fix this</a><br>Just use yarn instead of npm fix this, happily exploring.</p>
-<h4 id="十、Another-skill-get"><a href="#十、Another-skill-get" class="headerlink" title="十、Another skill get"></a>十、Another skill get</h4><p> It is necessary to have effective tools to do good work. Every time it’s so exciting to find a better way to optimize existing work environment.Till now, the environment to develop react-native is almost fully done.As everyone knows,react-native doesn’t support the way to see request.Yesterday this was denunciated by back-end colleague,which effects development severely, I was frustrated by what he said, so googled,and finally found a way to fix this.<br> Ok,focus come,(hehe….so many junk words),it is to use Charles to catch the request fetch by pages.<a href="https://www.jianshu.com/p/3bfae9ede35e" target="_blank" rel="noopener">Here is an article teach you how to config it</a><br> I installed and configed Charles before(I used to develop in hybrid),so here I just to install the certificate at Charles(select Help –&gt; SSL Proxy –&gt; Install … in IOS simulator) and then trust it in my IOS simulator(go to Setting –&gt; General –&gt; About –&gt; Certificate Trust Settings, and then trust it)<br> Finally, I can develop with all the configs happily,and It saves a lot of time.The following is now my work space looks like:<br><img src="/2018/05/28/about-react-native/work_environment.jpeg" title="caused by file missing"></p>
-<h4 id="十一、Hole-in-css"><a href="#十一、Hole-in-css" class="headerlink" title="十一、Hole in css"></a>十一、Hole in css</h4><p> It is not like web css to make an image circle just use border-radius the image’s width or height or 50%, you should give the attribute borderRadius half of the width or height of the image;</p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2018/05/28/about-react-native/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/05/28/about-react-native/" class="archive-article-date">
-  	<time datetime="2018-05-28T14:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1258,15 +1245,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1282,11 +1269,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
+                <a href="javascript:void(0)" class="js-tag color1">trick</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">trick</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1294,7 +1281,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">feeling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,6 +1293,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -1314,11 +1305,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color4">nginx、linux、server</a>
               </li>
             
             <div class="clearfix"></div>

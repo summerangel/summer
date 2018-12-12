@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://summerangel.github.io/2018/12/12/static-project-deploy/</loc>
+    
+    <lastmod>2018-12-12T14:44:31.044Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://summerangel.github.io/2018/11/30/convenient-regular-brings/</loc>
     
     <lastmod>2018-11-30T03:45:34.509Z</lastmod>
@@ -44,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/10/22/about-react/</loc>
+    <loc>https://summerangel.github.io/2017/10/22/good-code-framents/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     
@@ -65,14 +72,7 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2018/05/15/problem-records/</loc>
-    
-    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://summerangel.github.io/2017/10/22/about-javascript/</loc>
+    <loc>https://summerangel.github.io/2017/11/10/about-plugin-use/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     
@@ -86,7 +86,21 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/10/22/good-code-framents/</loc>
+    <loc>https://summerangel.github.io/2017/10/22/about-css/</loc>
+    
+    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://summerangel.github.io/2018/04/23/create-project-related-git/</loc>
+    
+    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://summerangel.github.io/2017/10/22/about-react/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     
@@ -100,21 +114,14 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/10/22/about-css/</loc>
+    <loc>https://summerangel.github.io/2018/05/15/problem-records/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/11/10/about-plugin-use/</loc>
-    
-    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://summerangel.github.io/2018/04/23/create-project-related-git/</loc>
+    <loc>https://summerangel.github.io/2017/10/22/about-javascript/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     
