@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://summerangel.github.io/2018/12/30/problem/</loc>
+    
+    <lastmod>2018-12-30T16:04:16.086Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://summerangel.github.io/2018/12/12/static-project-deploy/</loc>
     
     <lastmod>2018-12-12T14:44:31.044Z</lastmod>
@@ -72,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/11/10/about-plugin-use/</loc>
-    
-    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://summerangel.github.io/2017/10/22/command-magic/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
@@ -114,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://summerangel.github.io/2017/10/22/about-javascript/</loc>
+    
+    <lastmod>2018-07-11T15:00:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://summerangel.github.io/2018/05/15/problem-records/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
@@ -121,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://summerangel.github.io/2017/10/22/about-javascript/</loc>
+    <loc>https://summerangel.github.io/2017/11/10/about-plugin-use/</loc>
     
     <lastmod>2018-07-11T15:00:34.000Z</lastmod>
     

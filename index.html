@@ -150,6 +150,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-problem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/30/problem/">A general problem caused by the path</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Multilayer-routing-not-refresh"><a href="#Multilayer-routing-not-refresh" class="headerlink" title="Multilayer routing not refresh"></a>Multilayer routing not refresh</h4><p> I was intended to record this in my last blog, but since it is a general problem may be met by every developer, so I wrote this problem in a new blog,hope help someone and remind myself.</p>
+<p> In last blog, I deployed a static project successfully by building the project(which use webpack)、copy the builded file to the server and config the nginx to proxy the website(if you install git in your server and git clone the project from your github, this copy steps can be ignored), and the refresh problem was solved in last blog, it seems normal for a time, but later I found a problem, the refresh is only taking effect in the first layer of routing, if multilayer routing, the page will become a white screen, for example to make it clearly:</p>
+<p>  the first layer routing like this: <code>/card/card-list</code>, it is right and refreshable;<br>  but multilayer routing like this: <code>/card/card-detail/123</code>, is white screen, or maybe right,but<br>  white screen when you refresh.</p>
+<h4 id="Location-the-cause"><a href="#Location-the-cause" class="headerlink" title="Location the cause"></a>Location the cause</h4><p>It takes me hours to find the cause, still no result, and almost want to change to the hashroute. I thought the cause is wrong config of nginx, but I’m not good at nginx, just the degree of basic knowledge, so I turn to a niubility guy for help, he soon found the key point.The request is not right,it looks like this,</p>
+<img src="/2018/12/30/problem/cause_find.jpeg" title="the requst looks like">
+<h4 id="The-way-to-solve-it"><a href="#The-way-to-solve-it" class="headerlink" title="The way to solve it"></a>The way to solve it</h4><p>If you using create-react-app, go to the file: <code>config -&gt; webpack.config.prod.js</code>, change<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> publicPath = paths.servedPath;</span><br></pre></td></tr></table></figure></p>
+<p>to<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> publicPath = <span class="string">'/card/'</span>; <span class="comment">// you should replace the card with your own prefix</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Reference</p>
+</blockquote>
+<p><a href="http://blog.codingplayboy.com/2017/12/26/react-router-browserhistory-404/" target="_blank" rel="noopener">This blog</a> to some extents did help.</p>
+
+      
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/12/30/problem/">继续阅读 -&gt;</a>
+      </p>
+      
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+      
+      <span>
+        <a href="/2018/12/30/problem/" class="archive-article-date">
+  	<time datetime="2018-12-30T13:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-30</time>
+</a>
+      </span>
+      
+      <span class="archive-article-author">
+        <i class="icon-employer icon"></i>
+        <a href="">summer</a>
+      </span>
+
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">daily backup</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-static-project-deploy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1057,91 +1148,6 @@
 
 
   
-    <article id="[layout]-feeling" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/feeling/">Awesome CleanMyMac</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Just-boring-so-write-something"><a href="#Just-boring-so-write-something" class="headerlink" title="Just boring so write something"></a>Just boring so write something</h4><p>  Lately I was troubled by my computer, for its small volume after installed xcode,I almost can’t work,and today I bought CleanMyMac, actually I installed it before,which is the free one and had no effect at all, instead, the bought one is incredibly effective, release my mac almost double usable volume,it’s really awesome,and make it possible to install the software ps.I can learn some ps skill in my leisure time.Learning is great and full of joy.Happy~~</p>
-<p>  I’m always thinking about updating my blog style(the format is so awful),but as always have no time,there is so much things to do,and time is so fast.So much to learn but have no that much of time.Horrible~~</p>
-<h4 id="New-skill-get-get-dimensions-automately-through-ps-and-zeplin"><a href="#New-skill-get-get-dimensions-automately-through-ps-and-zeplin" class="headerlink" title="New skill get(get dimensions automately through ps and zeplin)"></a>New skill get(get dimensions automately through ps and zeplin)</h4><p>  1、Install ps;<br>  2、Install zeplin;<br>  3、Link zeplin with ps;<a href="https://support.zeplin.io/photoshop-integration/installing-photoshop-plugin-on-mac" target="_blank" rel="noopener">here is official tutorial</a><br>  3、Make it work: <a href="https://support.zeplin.io/photoshop-integration/working-with-artboards-in-photoshop" target="_blank" rel="noopener">this one is helpful</a><br>  4、And you can use this way to get dimension to write your website.</p>
-<p>Actually there exists better software than ps to do this,like sketch,but for my computer’s poor memory,I just use ps to do this,thankful zeplin supports it.</p>
-<h4 id="There-are-so-many-awesome-softwares-to-save-our-time"><a href="#There-are-so-many-awesome-softwares-to-save-our-time" class="headerlink" title="There are so many awesome softwares to save our time."></a>There are so many awesome softwares to save our time.</h4><p> Today’s homework is still delay,it’s late in night again, and I am so sleepy that my eye can’t open. Actually every day is sleepy,I need more more more sleep~~~</p>
-
-      
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2018/06/10/feeling/">继续阅读 -&gt;</a>
-      </p>
-      
-
-      
-    </div>
-    <div class="article-footer">
-      
-
-      
-      <span>
-        <a href="/2018/06/10/feeling/" class="archive-article-date">
-  	<time datetime="2018-06-10T13:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-      </span>
-      
-      <span class="archive-article-author">
-        <i class="icon-employer icon"></i>
-        <a href="">summer</a>
-      </span>
-
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">feeling</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1293,6 +1299,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">daily backup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">react、webpack、babel</a>
               </li>
              
@@ -1301,15 +1311,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nginx、linux、server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">wechat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nginx、linux、server</a>
               </li>
             
             <div class="clearfix"></div>
